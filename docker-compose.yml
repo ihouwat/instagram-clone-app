@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  frontend: # name of the first service
+    container_name: frontend
+    build: ./client # specify the directory of the Dockerfile
+    volumes:
+      - ./client:/app/
+      - /app/node_modules
+    working_dir: /app/
+    ports:
+      - "4200:4200" # specify port forwarding
+    command: npm start
+
+  #   links:
+  #     - "express"
+  #   depends_on:
+  #     - "express"
+
+  backend: #name of the second service
+    build:   # specify the directory of the Dockerfile
+      context: ./backend/src/main/docker/
+      dockerfile: Dockerfile.native
+    ports:
+      - "8080:8080" #specify ports forewarding

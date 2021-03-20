@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   frontend: # name of the first service
     container_name: frontend
@@ -10,22 +11,23 @@ services:
     ports:
       - "3000:3000" # specify port forwarding
     command: npm start
-
   #   links:
   #     - "express"
   #   depends_on:
   #     - "express"
 
   postgres:
-      image: maven
-      container_name: server
-      volumes:
-        - "./:/app"
-        # Mounting user's local .m2-directory,
-        # for custom settings.xml and for caching dependencies.
-        - "~/.m2:/root/.m2"
-      ports:
-        - 5005:5005 # Debug port
-        - 8080:8080 # Backend HTTP server port
-      working_dir: /app/
-      command: bash -c "mvn quarkus:remote-dev && -Ddebug=false && -Dquarkus.package.type=mutable-jar && -Dquarkus.live-reload.url=http://localhost:8080 && -Dquarkus.live-reload.password=123"
+    container_name: postgres
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: igor_postgres
+      POSTGRES_DB: instagram_clone_postgres
+      POSTGRES_PASSWORD: secret
+  
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - "4000:4000"

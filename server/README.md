@@ -1,4 +1,4 @@
-# backend project
+# server project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -41,18 +41,9 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 ./mvnw package -Pnative -Dquarkus.native.container-build=true
 ```
 
-You can then execute your native executable with: `./target/backend-1.0.0-SNAPSHOT-runner`
+You can then execute your native executable with: `./target/server-1.0.0-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-## Related guides
-
-- Hibernate ORM ([guide](https://quarkus.io/guides/hibernate-orm)): Define your persistent model with Hibernate ORM and JPA
-- REST Client ([guide](https://quarkus.io/guides/rest-client)): Call REST services
-- Undertow WebSockets ([guide](https://quarkus.io/guides/websockets)): WebSocket communication channel support
-- RESTEasy JAX-RS ([guide](https://quarkus.io/guides/rest-json)): REST endpoint framework implementing JAX-RS and more
-- SmallRye JWT ([guide](https://quarkus.io/guides/security-jwt)): Secure your applications with JSON Web Token
-- Redis Client ([guide](https://quarkus.io/guides/redis)): Connect to Redis in either imperative or reactive style
 
 ## Provided examples
 
@@ -61,9 +52,3 @@ If you want to learn more about building native executables, please consult http
 REST is easy peasy with this Hello World RESTEasy resource.
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
-
-### RESTEasy JSON serialisation using Jackson
-
-This example demonstrate RESTEasy JSON serialisation by letting you list, add and remove quark types from a list. Quarked!
-
-[Related guide section...](https://quarkus.io/guides/rest-json#creating-your-first-json-rest-service)

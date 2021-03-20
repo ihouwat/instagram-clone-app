@@ -8,7 +8,7 @@ services:
       - /app/node_modules
     working_dir: /app/
     ports:
-      - "4200:4200" # specify port forwarding
+      - "3000:3000" # specify port forwarding
     command: npm start
 
   #   links:
@@ -16,9 +16,16 @@ services:
   #   depends_on:
   #     - "express"
 
-  backend: #name of the second service
-    build:   # specify the directory of the Dockerfile
-      context: ./backend/src/main/docker/
-      dockerfile: Dockerfile.native
-    ports:
-      - "8080:8080" #specify ports forewarding
+  postgres:
+      image: maven
+      container_name: server
+      volumes:
+        - "./:/app"
+        # Mounting user's local .m2-directory,
+        # for custom settings.xml and for caching dependencies.
+        - "~/.m2:/root/.m2"
+      ports:
+        - 5005:5005 # Debug port
+        - 8080:8080 # Backend HTTP server port
+      working_dir: /app/
+      command: bash -c "mvn quarkus:remote-dev && -Ddebug=false && -Dquarkus.package.type=mutable-jar && -Dquarkus.live-reload.url=http://localhost:8080 && -Dquarkus.live-reload.password=123"

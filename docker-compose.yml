@@ -1,13 +1,14 @@
 version: "3.8"
 
 services:
-  frontend: # name of the first service
+  frontend: # name of the service
     container_name: frontend
-    build: ./client # specify the directory of the Dockerfile
+    build:
+      context: ./client #  directory of the Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./client:/app/
       - /app/node_modules
-    working_dir: /app/
     ports:
       - "3000:3000" # specify port forwarding
     command: npm start

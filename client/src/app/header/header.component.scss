@@ -1,0 +1,48 @@
+@import '../../../node_modules/carbon-components/scss/globals/scss/colors';
+
+// Header bg color
+.header-container {
+  background-color: $carbon--white-0;
+  border-bottom: 1px solid $gray-20;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-frame {
+  max-width: 928px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Header brand
+a.header-brand {
+  text-decoration: none;
+  h1 {
+    color: $gray-70;
+    font-size: 20px;
+  }
+}
+
+// Header icons
+.header-icons {
+  a {
+    margin-left: 28px;
+  }
+  a:first-of-type {
+    margin-left: 0;
+  }
+  img {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+}
+
+.header-search {
+  width: 215px;
+}

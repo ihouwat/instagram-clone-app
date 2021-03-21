@@ -1,16 +1,36 @@
-<ibm-header class="test" name="IGstagram">
-  <!-- <ibm-header-navigation ariaLabel="IGstagram">
-    <ibm-header-item  href="/repos">Repositories</ibm-header-item>
-  </ibm-header-navigation> -->
-  <ibm-header-global>
-    <ibm-header-action title="action">
-      <svg ibmIconNotification size="20"></svg>
-    </ibm-header-action>
-      <ibm-header-action title="action">
-      <svg ibmIconUserAvatar size="20"></svg>
-    </ibm-header-action>
-    <ibm-header-action title="action">
-      <svg ibmIconAppSwitcher size="20"></svg>
-    </ibm-header-action>
-  </ibm-header-global>
-</ibm-header>
+<!-- CENTER SEARCH BOX! MIGHT NEED DIFFERENT GRID -->
+
+<div class="header-container">
+  <div class="header-frame">
+
+    <a class="header-brand" routerLink="google.com">
+      <h1>IGstagram</h1>
+    </a>
+    
+    <div class="header-search">
+      <ibm-search
+        theme="dark"
+        [placeholder]=""
+        [disabled]=false
+        size="sm"
+        >
+      </ibm-search>
+    </div>
+      
+    <div class="header-icons">
+      <a routerLink="www.google.com">
+        <svg ibmIconHome size="20"></svg>
+      </a>
+      <a  routerLink="www.google.com">
+        <svg ibmIconSendAlt size="20"></svg>
+      </a>
+      <a  routerLink="www.google.com">
+        <svg ibmIconAddAlt size="20"></svg>
+      </a>
+      <a routerLink="www.google.com">
+        <img src="https://live.staticflickr.com/3100/3145603402_3ea94ff300_b.jpg" />
+      </a>
+    </div>
+
+  </div>
+</div>

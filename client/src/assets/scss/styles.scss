@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~carbon-components/scss/globals/scss/styles.scss'; // Carbon components styles
+@import './carbon-overrides.scss'; // Overrides to carbon components
+
+html {
+  background-color: $gray-10;
+}
+
+$feature-flags: (
+  grid-columns-16: true
+)

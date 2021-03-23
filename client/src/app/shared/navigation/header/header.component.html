@@ -1,0 +1,46 @@
+<div class="header-container">
+  <div class="header-frame">
+
+    <div class="header-brand">
+      <a routerLink="google.com">
+        <h1>IGstagram</h1>
+      </a>
+    </div>
+    
+    <div class="header-search">
+      <ibm-search
+        #searchBox
+        theme="dark"
+        [placeholder]=""
+        [disabled]="isSignedIn ? false : true"
+        size="sm"
+        >
+      </ibm-search>
+    </div>
+
+    <div class="header-icons">
+      <ng-container  *ngIf="isSignedIn else signInButtons">
+        <a routerLink="www.google.com">
+          <svg ibmIconHome size="20"></svg>
+        </a>
+        <a routerLink="www.google.com">
+          <svg ibmIconSendAlt size="20"></svg>
+        </a>
+        <a routerLink="www.google.com">
+          <svg ibmIconAddAlt size="20"></svg>
+        </a>
+        <a routerLink="www.google.com">
+          <img src="https://live.staticflickr.com/3100/3145603402_3ea94ff300_b.jpg" />
+        </a>
+      </ng-container>
+    
+      <ng-template #signInButtons>
+        <button ibmButton="primary">Log In
+          <svg ibmIconUserAvatar size="20" class="bx--btn__icon"></svg>
+        </button>
+        <button ibmButton="ghost">Sign Up</button>
+      </ng-template>
+    </div>
+
+  </div>
+</div>

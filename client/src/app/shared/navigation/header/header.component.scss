@@ -1,10 +1,10 @@
-@import '../../../node_modules/carbon-components/scss/globals/scss/colors';
+@import '../../../../../node_modules/carbon-components/scss/globals/scss/colors';
 
 // Header bg color
 .header-container {
   background-color: $carbon--white-0;
   border-bottom: 1px solid $gray-20;
-  height: 54px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,16 +19,28 @@
 }
 
 // Header brand
-a.header-brand {
-  text-decoration: none;
+div.header-brand {
+  flex: 1;
+  a {
+    text-decoration: none;
+  }
   h1 {
+    display: inline;
     color: $gray-70;
     font-size: 20px;
   }
 }
 
+// Search bar
+.header-search {
+  flex: 1;
+  max-width: 215px;
+}
+
 // Header icons
 .header-icons {
+  flex: 1;
+  text-align: right;
   a {
     margin-left: 28px;
   }
@@ -43,6 +55,3 @@ a.header-brand {
   }
 }
 
-.header-search {
-  width: 215px;
-}

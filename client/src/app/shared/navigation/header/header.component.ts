@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isSignedIn!:boolean;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void { 
+    this.isSignedIn = true;
   }
 
 }

@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~carbon-components/scss/globals/scss/styles.scss'; // Carbon components styles
+@import '~carbon-components/scss/globals/scss/_typography.scss'; // Carbon typography tokens
+@import '~carbon-components/scss/globals/scss/_colors.scss'; // Colors
+
+
 @import './carbon-overrides.scss'; // Overrides to carbon components
+@import './1-layouts/layouts-dir.scss';
 
 html {
   background-color: $gray-10;

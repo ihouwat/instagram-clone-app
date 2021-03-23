@@ -1,7 +1,5 @@
-@import '../../../../../node_modules/carbon-components/scss/globals/scss/colors';
-
 // Header bg color
-.header-container {
+.header-wrapper {
   background-color: $carbon--white-0;
   border-bottom: 1px solid $gray-20;
   height: 48px;
@@ -10,7 +8,7 @@
   justify-content: center;
 }
 
-.header-frame {
+.header-container {
   max-width: 928px;
   width: 100%;
   display: flex;
@@ -27,7 +25,7 @@ div.header-brand {
   h1 {
     display: inline;
     color: $gray-70;
-    font-size: 20px;
+    @include carbon--type-style('productive-heading-03');
   }
 }
 
@@ -43,9 +41,6 @@ div.header-brand {
   text-align: right;
   a {
     margin-left: 28px;
-  }
-  a:first-of-type {
-    margin-left: 0;
   }
   img {
     width: 19px;

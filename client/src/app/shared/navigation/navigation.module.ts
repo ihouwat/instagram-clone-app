@@ -8,7 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 
 // import carbon design system modules
 import {SearchModule, ButtonModule} from 'carbon-components-angular';
-import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule} from '@carbon/icons-angular';
+import {HomeModule, SendAltModule, AddAltModule, 
+    UserAvatarModule, LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';
 
 
 @NgModule({
@@ -24,7 +25,10 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule} from '@carbon
     HomeModule, 
     SendAltModule, 
     AddAltModule,
-    UserAvatarModule
+    UserAvatarModule,
+    LogoGithubModule,
+    LogoTwitterModule,
+    LogoLinkedinModule
   ],
   exports: [
     HeaderComponent,

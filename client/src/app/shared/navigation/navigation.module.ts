@@ -6,7 +6,7 @@ import { AppRoutingModule } from '../../app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-// import carbon design system modules
+// import carbon design modules
 import {SearchModule, ButtonModule} from 'carbon-components-angular';
 import {HomeModule, SendAltModule, AddAltModule, 
     UserAvatarModule, LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';

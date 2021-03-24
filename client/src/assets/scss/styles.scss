@@ -7,8 +7,9 @@
 
 @import './carbon-overrides.scss'; // Overrides to carbon components
 @import './1-layouts/layouts-dir.scss';
+@import './2-components/components-dir.scss';
 
-html {
+body {
   background-color: $gray-10;
 }
 

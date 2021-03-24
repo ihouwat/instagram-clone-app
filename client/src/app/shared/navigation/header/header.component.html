@@ -12,14 +12,14 @@
         #searchBox
         theme="dark"
         [placeholder]=""
-        [disabled]="isSignedIn ? false : true"
+        [disabled]="disableSearchBox()"
         size="sm"
         >
       </ibm-search>
     </div>
 
     <div class="header-icons">
-      <ng-container  *ngIf="isSignedIn else signInButtons">
+      <ng-container  *ngIf="signedIn else signInButtons">
         <a routerLink="www.google.com">
           <svg ibmIconHome size="20"></svg>
         </a>

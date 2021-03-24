@@ -1,0 +1,41 @@
+<div class="login-signup-wrapper">
+  <!-- ADD IMAGE LATER -->
+  
+  <div class="login-signup-form">
+    
+    <form>
+      <h1>IGstagram Clone</h1>
+
+      <ibm-label
+        [invalid]=false
+        invalidText="Invalid email">
+      <label>Email</label>
+      <input
+        ibmText
+        size="sm"
+        theme="dark"
+        placeholder=""
+        autocomplete="autocomplete">
+    </ibm-label>
+  
+    <ibm-label
+      [invalid]=false
+      invalidText="Invalid password">
+    <label>Password</label>
+    <input
+      ibmText
+      size="sm"
+      theme="dark"
+      placeholder=""
+      autocomplete="autocomplete">
+    </ibm-label>
+    <button ibmButton="primary">Log In</button>
+    </form>
+
+    <p class="login-helper-text">
+      Don't have an account?
+      <a routerLink='./signup'>Sign Up</a>
+    </p> 
+
+  </div>
+</div>

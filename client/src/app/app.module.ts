@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
-// Import from core
+// import custom modules 
 import { NavigationModule } from './shared/navigation/navigation.module';
+import { AuthenticationModule } from './authentication/authentication.module'
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { NavigationModule } from './shared/navigation/navigation.module';
     BrowserModule,
     AppRoutingModule,
     NavigationModule,
+    AuthenticationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

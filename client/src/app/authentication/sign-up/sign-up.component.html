@@ -7,7 +7,7 @@
   </ibm-progress-indicator>
 
   <div class="login-signup-container signup-container-width">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
 
       <h1>IGstagram Clone</h1>
 
@@ -20,9 +20,11 @@
       <app-upload-image *ngIf="currentStep === 1" [uploadImage]="currentGroup"> </app-upload-image>
       <app-personal-details *ngIf="currentStep === 2" [personalDetails]="currentGroup"></app-personal-details>
 
-      <button ibmButton="secondary" *ngIf="currentStep !== 0" (click)="prev()">Previous</button>
-      <button ibmButton="primary" *ngIf="currentStep !== 2" (click)="next()">Next</button>
-      <button ibmButton="primary" type="submit" *ngIf="currentStep === 2">Submit</button>
+      <div class="login-signup-buttons">
+        <button ibmButton="secondary" *ngIf="currentStep !== 0" (click)="prev()">Previous</button>
+        <button ibmButton="primary" *ngIf="currentStep !== 2" (click)="next()">Next</button>
+        <button ibmButton="primary" type="submit" *ngIf="currentStep === 2">Submit</button>
+      </div>
 
     </form>
    

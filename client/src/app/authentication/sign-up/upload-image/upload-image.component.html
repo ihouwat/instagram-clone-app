@@ -1,52 +1,13 @@
 <ng-container [formGroup]="uploadImage">
-  <ibm-label
-      [invalid]=false
-      invalidText="Invalid email">
-    <label>Email</label>
-    <input
-      formControlName="email"
-      type="text"
-      ibmText
-      size="md"
-      theme="dark"
-      placeholder=""
-      autocomplete="autocomplete">
-    </ibm-label>
-  
-    <ibm-label>
-    <label>Full Name</label>
-    <input
-      formControlName="fullName"
-      ibmText
-      size="md"
-      theme="dark"
-      placeholder=""
-      autocomplete="autocomplete">
-    </ibm-label>
-  
-    <ibm-label
-      [invalid]=false
-      invalidText="User name exists">
-    <label>Username</label>
-    <input
-      formControlName="userName"
-      ibmText
-      size="md"
-      theme="dark"
-      placeholder=""
-      autocomplete="autocomplete">
-    </ibm-label>
-  
-    <ibm-label
-      [invalid]=false
-      invalidText="Invalid password">
-    <label>Password</label>
-    <input
-      formControlName="password"
-      ibmText
-      size="md"
-      theme="dark"
-      placeholder=""
-      autocomplete="autocomplete">
-    </ibm-label>
+  <div class="image-uploader-container">
+    <ibm-file-uploader
+      formControlName="image"
+			title="Upload photo"
+			description="only .jpg and .png files. 500kb max file size"
+			[accept]= "['.png', 'image/jpeg']"
+			[multiple]=false
+			dropText="Drag and drop your file here or upload"
+      [drop]=true>
+		</ibm-file-uploader>
+  </div>
 </ng-container>

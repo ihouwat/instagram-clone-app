@@ -1,1 +1,31 @@
-<p>personal-details works!</p>
+<ng-container [formGroup]="personalDetails">
+  <ibm-label
+      [invalid]=false
+      invalidText="Invalid website address">
+    <label> Website </label>
+    <input
+      formControlName="website"
+      #website
+      type="text"
+      ibmText
+      size="md"
+      theme="dark"
+      placeholder=""
+      autocomplete="autocomplete">
+  </ibm-label>
+
+  <ibm-label
+    helperText="Write a short profile bio, under 150 words."
+    [invalid]=false
+    invalidText="You have exceeded the 150 word character count">
+    Bio
+    <textarea
+      ibmTextArea
+      formControlName="bio"
+      [disabled]=false
+      theme="dark"
+      [rows]="4"
+      [cols]="1"
+      aria-label="textarea"></textarea>
+  </ibm-label>
+</ng-container>

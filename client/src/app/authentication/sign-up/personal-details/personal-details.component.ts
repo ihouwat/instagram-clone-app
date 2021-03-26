@@ -1,16 +1,13 @@
-import { Component } from '@angular/core';
-import { SignUpComponent } from '../sign-up.component';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-personal-details',
   templateUrl: './personal-details.component.html',
 })
 export class PersonalDetailsComponent {
-  personalDetails = this.form.currentGroup;
+  @Input() personalDetails!:FormGroup
 
-  constructor(private form:SignUpComponent) { }
-
-  ngOnInit(): void {
-  }
+  constructor() { }
 
 }

@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { SignUpComponent } from '../sign-up.component';
+import { Component, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-account-details',
   templateUrl: './account-details.component.html',
 })
-export class AccountDetailsComponent  {
-  accountDetails = this.form.currentGroup;
+export class AccountDetailsComponent {
+  @Input() accountDetails!:FormGroup
 
-  constructor(private form:SignUpComponent) { }
+  constructor() { }
 
 }

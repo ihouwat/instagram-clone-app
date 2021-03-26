@@ -3,7 +3,7 @@
   
   <div class="login-signup-container">
     
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <h1>IGstagram Clone</h1>
 
       <ibm-label
@@ -11,6 +11,7 @@
         invalidText="Invalid email">
       <label>Email</label>
       <input
+        formControlName="email"
         ibmText
         size="md"
         theme="dark"
@@ -23,13 +24,16 @@
       invalidText="Invalid password">
     <label>Password</label>
     <input
+      formControlName="password"
       ibmText
       size="md"
       theme="dark"
       placeholder=""
       autocomplete="autocomplete">
     </ibm-label>
-    <button ibmButton="primary">Log In</button>
+    <div class="login-signup-buttons">
+      <button ibmButton="primary">Log In</button>
+    </div>
     </form>
 
     <p class="login-helper-text">

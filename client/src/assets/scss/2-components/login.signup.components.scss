@@ -29,9 +29,14 @@
           margin-top: 32px;
         }
       }
-      button {
+      .login-signup-buttons {
         margin-top: 8px;
-        align-self: flex-end;
+        display: flex;
+        justify-content: flex-end;
+        button {
+          height: 4rem;
+          flex-basis: 50%;
+        }
       }
     }
   }

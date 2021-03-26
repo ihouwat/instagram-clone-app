@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// import custom modules 
+// import custom modules and services
 import { NavigationModule } from './shared/navigation/navigation.module';
 import { AuthenticationModule } from './authentication/authentication.module'
+import { SessionManagementService } from './shared/services/session-management.service'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AuthenticationModule } from './authentication/authentication.module'
     NavigationModule,
     AuthenticationModule
   ],
-  providers: [],
+  providers: [SessionManagementService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })

@@ -3,11 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
+export class SessionManagementService {
 
   isSignedIn:boolean = true;
-
+  
   constructor() { }
-
-    
 }

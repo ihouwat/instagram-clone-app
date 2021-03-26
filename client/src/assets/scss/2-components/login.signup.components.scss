@@ -1,12 +1,13 @@
 // Login and sign up pages share form classes due to almost identical structure
 
+// Common styles
 .login-signup-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 48px;
   margin-bottom: 128px;
-  .login-signup-form {
+  .login-signup-container {
     margin-top: 24px;
     width: 350px;
     display: flex;
@@ -15,7 +16,7 @@
       h1 {
         margin: 32px 0 0 16px;
         color: $gray-100;
-        @include carbon--type-style('productive-heading-03');
+        @include carbon--type-style('productive-heading-04');
       }
       background-color: $carbon--white-0;
       display: flex;
@@ -35,12 +36,26 @@
     }
   }
 
+  // Diverging styles here
+
+  // Width of signup form container
+  .signup-container-width, ibm-progress-indicator {
+    width: 450px;
+  }
+
+  // Signup form margin
+  ibm-progress-indicator {
+    margin: 12px 0;
+  }
+
+  // Signup page helper text
   .signup-helper-text {
     margin: 0 0 0 16px;
     color: $gray-70;
     @include carbon--type-style('body-short-01');
   }
 
+  // Login page helper text
   .login-helper-text {
     @extend .signup-helper-text;
     margin: 16px 0 0 0;

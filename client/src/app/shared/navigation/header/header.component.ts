@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../../authentication/authentication.service';
+import { SessionManagementService } from '../../services/session-management.service';
  
 @Component({
   selector: 'app-header',
@@ -9,11 +9,11 @@ export class HeaderComponent implements OnInit {
 
   signedIn!:boolean;
 
-  constructor(private authService : AuthenticationService) {}
+  constructor(private sessionManagement : SessionManagementService) {}
 
   ngOnInit(): void {
     // Fetch sign in status on log in
-    this.signedIn = this.authService.isSignedIn;
+    this.signedIn = this.sessionManagement.isSignedIn;
   }
 
   // If not signed in, disable search box

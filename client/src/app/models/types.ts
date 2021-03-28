@@ -12,6 +12,7 @@ export interface User {
   numOfPosts:number;
   numOfFollowers:number;
   numFollowing:number;
+  description:string;
 }
 
 //==============================================================================
@@ -20,9 +21,10 @@ export interface User {
 
 export interface Post {
   id:number;
-  owner: User;
+  owner: string;
   imageURL:string;
   numOfLikes:number;
+  numOfComments:number;
   comments:Array<String>;
   date:Date;
 }

@@ -7,9 +7,10 @@ import { SettingsComponent } from './settings/settings.component';
 import { NavigationModule } from '../shared/navigation/navigation.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { PostsModule } from '../posts/posts.module';
 
 // import carbon components and modules
-import { ButtonModule } from 'carbon-components-angular';
+import { ButtonModule, LinkModule } from 'carbon-components-angular';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { ButtonModule } from 'carbon-components-angular';
     CommonModule,
     UserFeedsRoutingModule,
     NavigationModule,
-    ButtonModule
+    ButtonModule,
+    LinkModule,
+    PostsModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

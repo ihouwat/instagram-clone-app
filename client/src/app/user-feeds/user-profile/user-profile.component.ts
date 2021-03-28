@@ -7,7 +7,6 @@ import { UserManagementService } from '../../shared/services/user-management.ser
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
 
@@ -22,7 +21,7 @@ export class UserProfileComponent implements OnInit {
     this.route.params.subscribe(params => {
       // get the username out of the route params
       const username = params['username'];
-      this.userMgmtService.getUser(username);
+      this.userMgmtService.getUserRoute(username);
 
     })
   }

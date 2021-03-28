@@ -11,6 +11,7 @@ import { UserFeedsModule } from './user-feeds/user-feeds.module';
 import { SessionManagementService } from './shared/services/session-management.service';
 import { UserManagementService } from './shared/services/user-management.service';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     AppRoutingModule,
     NavigationModule,
     AuthenticationModule,
-    UserFeedsModule
+    UserFeedsModule,
+    PostsModule
   ],
   providers: [
     SessionManagementService,

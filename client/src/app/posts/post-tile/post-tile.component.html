@@ -1,0 +1,17 @@
+<a routerLink="../">
+  <ibm-tile theme="light" class="post-wrapper" [id]="post.id" >
+    <img [src]="post.imageURL"/>
+
+    <div class="post-overlay"> 
+      <div class="post-icon">
+        <svg ibmIconFavoriteFilled size="20" title="Number of likes"></svg>
+        <span>{{post.numOfLikes}}</span>
+      </div>
+      <div class="post-icon">
+        <svg ibmIconChat size="20" title="Number of comments"></svg>
+        <span>{{post.numOfComments}}</span>
+      </div>
+    </div>
+
+  </ibm-tile>
+</a>

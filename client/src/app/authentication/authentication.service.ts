@@ -22,7 +22,7 @@ export class AuthenticationService {
 
     // Route to user page
     // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
-    this.userMgmtService.getUser(this.loginInfo.username)
+    this.userMgmtService.getUserRoute(this.loginInfo.username)
   }
 
   // Validate and login in user.
@@ -31,7 +31,7 @@ export class AuthenticationService {
     this.loginInfo = form;
     // Route to user page if login validated
     // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
-    this.userMgmtService.getUser(this.loginInfo.email);
+    this.userMgmtService.getUserRoute(this.loginInfo.email);
   }
 
   constructor(private userMgmtService: UserManagementService,

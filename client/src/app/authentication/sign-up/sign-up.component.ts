@@ -83,7 +83,7 @@ export class SignUpComponent implements OnInit  {
       }),
       personalDetails: this.fb.group({
         website: [''],
-        bio: ['']
+        description: ['']
       })
     })
   }

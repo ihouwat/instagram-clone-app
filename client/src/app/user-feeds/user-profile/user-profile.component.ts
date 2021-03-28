@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
     this.route.params.subscribe(params => {
       // get the username out of the route params
       const username = params['username'];
-      this.userMgmtService.getUserRoute(username);
+      this.userMgmtService.getUser(username);
 
     })
   }

@@ -15,14 +15,17 @@ export class UserManagementService {
 
   // For now, manually get user email from login page and redirect to user page
   // TODO implement proper user authorization, probably move to authorization service
-  getUserRoute(user: string):void {
-
+  getUser(user: string):string{
     const userObj = USERS.filter((u:User) => u.email === user);
+    if (userObj[0]) this.routeToUserPage(userObj[0].username);
 
-    if (userObj) this.router.navigate([`./${userObj[0].username}`]);
-    
     else this.router.navigate(['./404']);
 
+    return userObj[0].username;
+  }
+  
+  routeToUserPage(username:string) {
+    this.router.navigate([`./${username}`]);
   }
 
   constructor(private router:Router) { }

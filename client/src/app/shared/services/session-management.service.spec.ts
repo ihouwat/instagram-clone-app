@@ -13,4 +13,10 @@ describe('SessionManagementService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('#isSignedIn should return boolean', () => {
+    const isSignedIn:boolean = true;
+    expect(isSignedIn).toBe(true);
+  });
+
 });

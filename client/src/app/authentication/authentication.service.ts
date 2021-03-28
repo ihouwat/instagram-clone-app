@@ -3,7 +3,6 @@ import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 // mock db
-import { USERS } from '../../mock/userDB';  
 import { UserManagementService } from '../shared/services/user-management.service';
 
 @Injectable({
@@ -23,7 +22,7 @@ export class AuthenticationService {
 
     // Route to user page
     // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
-    this.userMgmtService.getUserRoute(this.loginInfo.username)
+    this.userMgmtService.getUser(this.loginInfo.username)
   }
 
   // Validate and login in user.
@@ -32,7 +31,7 @@ export class AuthenticationService {
     this.loginInfo = form;
     // Route to user page if login validated
     // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
-    this.userMgmtService.getUserRoute(this.loginInfo.email);
+    this.userMgmtService.getUser(this.loginInfo.email);
   }
 
   constructor(private userMgmtService: UserManagementService,

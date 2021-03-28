@@ -8,7 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AccountDetailsComponent } from './sign-up/account-details/account-details.component';
 import { UploadImageComponent } from './sign-up/upload-image/upload-image.component';
 import { PersonalDetailsComponent } from './sign-up/personal-details/personal-details.component';
-import {AuthenticationService} from './authentication.service'
+import { AuthenticationService } from './authentication.service'
 
 // import carbon design modules
 import { InputModule, ButtonModule, ProgressIndicatorModule, PlaceholderModule, FileUploaderModule } from 'carbon-components-angular';

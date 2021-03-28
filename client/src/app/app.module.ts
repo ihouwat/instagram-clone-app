@@ -6,20 +6,28 @@ import { AppComponent } from './app.component';
 
 // import custom modules and services
 import { NavigationModule } from './shared/navigation/navigation.module';
-import { AuthenticationModule } from './authentication/authentication.module'
-import { SessionManagementService } from './shared/services/session-management.service'
+import { AuthenticationModule } from './authentication/authentication.module';
+import { UserFeedsModule } from './user-feeds/user-feeds.module';
+import { SessionManagementService } from './shared/services/session-management.service';
+import { UserManagementService } from './shared/services/user-management.service';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavigationModule,
-    AuthenticationModule
+    AuthenticationModule,
+    UserFeedsModule
   ],
-  providers: [SessionManagementService],
+  providers: [
+    SessionManagementService,
+    UserManagementService
+  ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })

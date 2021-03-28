@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 // mock db
-import { USERS } from '../mock/userDB';  
+import { USERS } from '../../mock/userDB';  
+import { UserManagementService } from '../shared/services/user-management.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+
+  // * Purpose of this service is to authenticate login and signup of users.
 
   signUpInfo!:any;
   loginInfo!:any;
@@ -17,23 +20,22 @@ export class AuthenticationService {
   signUpUser(form:FormGroup) {
     this.signUpInfo = form;
     console.log(this.signUpInfo);
+
     // Route to user page
-    this.router.navigate(['/']);
+    // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
+    this.userMgmtService.getUserRoute(this.loginInfo.username)
   }
 
   // Validate and login in user.
   // FormGroup comes from Login Component
   validateAndLogin(form:FormGroup){
     this.loginInfo = form;
-    console.log(this.loginInfo);
-
     // Route to user page if login validated
-    if(this.loginInfo.email === USERS[0].email 
-        && this.loginInfo.password === USERS[0].password){
-          this.router.navigate(['/']);
-      }
+    // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
+    this.userMgmtService.getUserRoute(this.loginInfo.email);
   }
 
-  constructor(private router: Router) { }
+  constructor(private userMgmtService: UserManagementService,
+    private router:Router) { }
   
 }

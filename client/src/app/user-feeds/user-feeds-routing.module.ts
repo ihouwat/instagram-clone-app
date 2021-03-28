@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from './user/user.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
-  {path: '', component: UserComponent},
+  {path: '', component: UserProfileComponent},
   {path: 'settings', component: SettingsComponent}
 ];
 

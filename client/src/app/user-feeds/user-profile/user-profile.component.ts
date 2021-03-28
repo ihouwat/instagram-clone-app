@@ -5,11 +5,11 @@ import { User } from '../../models/types';
 import { UserManagementService } from '../../shared/services/user-management.service';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserProfileComponent implements OnInit {
 
   user!:User
 

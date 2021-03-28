@@ -3,21 +3,25 @@ import { CommonModule } from '@angular/common';
 
 // import custom components and modules
 import { UserFeedsRoutingModule } from './user-feeds-routing.module';
-import { UserFeedsComponent } from './user-feeds.component';
 import { SettingsComponent } from './settings/settings.component';
-import { UserComponent } from './user/user.component';
 import { NavigationModule } from '../shared/navigation/navigation.module';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+
+// import carbon components and modules
+import { ButtonModule } from 'carbon-components-angular';
 
 @NgModule({
   declarations: [
-    UserFeedsComponent,
-    UserComponent,
     SettingsComponent,
+    UserProfileComponent,
+    UserInfoComponent,
   ],
   imports: [
     CommonModule,
     UserFeedsRoutingModule,
-    NavigationModule
+    NavigationModule,
+    ButtonModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

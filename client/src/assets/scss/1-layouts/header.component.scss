@@ -39,7 +39,7 @@ div.header-brand {
 .header-icons {
   flex: 1;
   text-align: right;
-  a {
+  a, button {
     margin-left: 28px;
   }
   img {
@@ -47,6 +47,35 @@ div.header-brand {
     height: 19px;
     border-radius: 50%;
     border: 1px solid black;
+  }
+  button.bx--btn--sm {
+    padding: 0;
+    background: none;
+    min-height: auto;
+    position: relative;
+    .header-overflow-menu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      transform: translate(-184px, 85px);
+      background-color: $carbon--white-0;
+      border: 0;
+      filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+      li {
+        width: 200px;
+        height: 48px;
+        padding: 16px;
+        @include carbon--type-style('body-short-01');
+        color: $gray-100;
+        &:hover, &:focus {
+          background-color: $hover-ui;
+          outline-color: $link-01;
+        }
+        &:active, &:visited {
+          background-color: $hover-selected-ui;
+        }
+      }
+    }
   }
 }
 

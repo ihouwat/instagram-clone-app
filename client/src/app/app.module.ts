@@ -10,6 +10,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { UserFeedsModule } from './user-feeds/user-feeds.module';
 import { SessionManagementService } from './shared/services/session-management.service';
 import { UserManagementService } from './shared/services/user-management.service';
+import { PostManagementService } from './shared/services/post-management.service';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { PostsModule } from './posts/posts.module';
 
@@ -24,11 +25,12 @@ import { PostsModule } from './posts/posts.module';
     NavigationModule,
     AuthenticationModule,
     UserFeedsModule,
-    PostsModule
+    PostsModule,
   ],
   providers: [
     SessionManagementService,
-    UserManagementService
+    UserManagementService,
+    PostManagementService
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],

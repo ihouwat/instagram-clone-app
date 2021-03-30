@@ -18,11 +18,9 @@ export class AuthenticationService {
   // Receive FormGroup from from Sign Up Component
   signUpUser(form:FormGroup) {
     this.signUpInfo = form;
-    console.log(this.signUpInfo);
-
     // Route to user page
     // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
-    this.userMgmtService.getUserRoute(this.loginInfo.username)
+    this.userMgmtService.navigateToUserRoute(this.loginInfo.username)
   }
 
   // Validate and login in user.
@@ -31,7 +29,7 @@ export class AuthenticationService {
     this.loginInfo = form;
     // Route to user page if login validated
     // TODO ? do validation, JWT, etc all here, pass on info to UserMgmtService and session info to SessionMgmtService
-    this.userMgmtService.getUserRoute(this.loginInfo.email);
+    this.userMgmtService.navigateToUserRoute(this.loginInfo.email);
   }
 
   constructor(private userMgmtService: UserManagementService,

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { SessionManagementService } from '../../services/session-management.service';
+import { UserManagementService } from '../../services/user-management.service';
+import { User } from '../../../models/types';
  
 @Component({
   selector: 'app-header',
@@ -7,13 +9,33 @@ import { SessionManagementService } from '../../services/session-management.serv
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('overflowMenuBtn') overflowMenuBtn!:ElementRef;
+  @ViewChild('overflowMenu') overflowMenu!:ElementRef;
+  isMenuOpen:boolean = false;
+
+  user!:User;
   signedIn!:boolean;
 
-  constructor(private sessionManagement : SessionManagementService) {}
+  constructor(
+    private sessionService:SessionManagementService,
+    private userService:UserManagementService,
+    private renderer:Renderer2) {
 
-  ngOnInit(): void {
+      // Detects mouse click events
+      this.renderer.listen('window', 'click', (e:Event) => {
+        // if the mouse click happens outside the button or menu, close the menu
+        if(!this.overflowMenu.nativeElement.contains(e.target)
+          && !this.overflowMenuBtn.nativeElement.contains(e.target)) {
+          this.isMenuOpen = false;
+        }
+      });
+      
+    }
+
+  ngOnInit():void {
     // Fetch sign in status on log in
-    this.signedIn = this.sessionManagement.isSignedIn;
+    this.signedIn = this.sessionService.isSignedIn;
+    if (this.signedIn) this.user = this.userService.getUser();
   }
 
   // If not signed in, disable search box
@@ -21,5 +43,9 @@ export class HeaderComponent implements OnInit {
     return this.signedIn === true ? false : true;
   }
 
-  
+  // Toggles overflow menu
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
 }

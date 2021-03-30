@@ -1,24 +1,24 @@
 <div class="user-info-image">
-  <img src="../../../assets/images/avatar-1577909_640.png" width="150" />
+  <img src="{{user.imageURL}}" width="150" />
 </div>
 
 <section class="user-info-details">
 
   <div class="user-info-username">
-    <h2>userName</h2>
+    <h2>{{user.username}}</h2>
     <button *ngIf="isSignedIn" ibmButton="tertiary" size="sm"> Edit Profile</button>
   </div>
 
   <ul class="user-info-stats">
-    <li>128 posts</li>
-    <li>40 followers</li>
-    <li>10 following</li>
+    <li>{{user.numOfPosts}} posts</li>
+    <li>{{user.numOfFollowers}} followers</li>
+    <li>{{user.numFollowing}} following</li>
   </ul>
 
   <div class="user-info-description">
-    <h2> Full Name </h2>
-    <p>This is the official fanpage of Igor Houwat</p>
-    <a href='./' ibmLink [inline]=false> www.igor.com </a>
+    <h2>{{user.fullName}}</h2>
+    <p>{{user.description}}</p>
+    <a href='./' ibmLink [inline]=false>{{user.website}}</a>
   </div>
 
 </section>

@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { POSTS } from '../../../mock/postsDB';
 import { Post } from '../../models/types';
 
 @Component({
@@ -9,8 +8,7 @@ import { Post } from '../../models/types';
 })
 export class PostTileComponent implements OnInit {
 
-  // @Input() post!:Post;
-  post:Post = POSTS[0];
+  @Input() post!:Post;
 
   constructor() { }
 

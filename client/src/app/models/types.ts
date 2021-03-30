@@ -13,6 +13,7 @@ export interface User {
   numOfFollowers:number;
   numFollowing:number;
   description:string;
+  website:string;
 }
 
 //==============================================================================

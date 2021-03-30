@@ -15,7 +15,7 @@ import { TilesModule } from 'carbon-components-angular';
     AppRoutingModule,
     FavoriteFilledModule,
     ChatModule,
-    TilesModule
+    TilesModule,
   ],
   exports: [
     PostTileComponent

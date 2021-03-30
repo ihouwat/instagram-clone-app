@@ -2,7 +2,7 @@
   <div class="header-container">
 
     <div class="header-brand">
-      <a routerLink="google.com">
+      <a routerLink="www.google.com">
         <h1>IGstagram</h1>
       </a>
     </div>
@@ -29,18 +29,24 @@
         <a routerLink="www.google.com">
           <svg ibmIconAddAlt size="20"></svg>
         </a>
-        <a routerLink="www.google.com">
-          <img src="https://live.staticflickr.com/3100/3145603402_3ea94ff300_b.jpg" />
-        </a>
-      </ng-container>
-    
-      <ng-template #signInButtons>
-        <button routerLink="login" ibmButton="primary">Log In
-          <svg ibmIconUserAvatar size="20" class="bx--btn__icon"></svg>
+        <button #overflowMenuBtn (click)="toggleMenu()" ibmButton="ghost" size="sm" [iconOnly]=true>
+          <img [src]="this.user.imageURL" />
+          <ul #overflowMenu class="header-overflow-menu" *ngIf="isMenuOpen">
+            <li [routerLink]="[user.username]">See Profile</li>
+            <li [routerLink]="[user.username, 'settings']">Settings</li>
+            <li routerLink="./login">Log Out</li>
+          </ul>
         </button>
-        <button routerLink="/login/signup" ibmButton="ghost">Sign Up</button>
-      </ng-template>
+      </ng-container>
     </div>
 
+    
+    <ng-template #signInButtons>
+      <button routerLink="login" ibmButton="primary">Log In
+        <svg ibmIconUserAvatar size="20" class="bx--btn__icon"></svg>
+      </button>
+      <button routerLink="/login/signup" ibmButton="ghost">Sign Up</button>
+    </ng-template>
   </div>
+
 </nav>

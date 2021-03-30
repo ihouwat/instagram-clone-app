@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/app/models/types';
 import { SessionManagementService } from '../../shared/services/session-management.service'
 
 @Component({
@@ -7,6 +8,7 @@ import { SessionManagementService } from '../../shared/services/session-manageme
 })
 export class UserInfoComponent implements OnInit {
 
+  @Input() user!:User;
   isSignedIn!:boolean;
 
   constructor(private sessionMgmtService:SessionManagementService) { }

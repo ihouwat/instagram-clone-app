@@ -2,4 +2,5 @@ To dos found in:
 
 - App routing module
 - User Management Service
+  - isOwner flag to specify user permissions etc.
 - Authentication Service

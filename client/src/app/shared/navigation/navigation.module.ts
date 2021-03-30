@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../../app-routing.module';
 
@@ -8,8 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 
 // import carbon design modules
 import {SearchModule, ButtonModule} from 'carbon-components-angular';
-import {HomeModule, SendAltModule, AddAltModule, 
-    UserAvatarModule, LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';
+import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule, 
+  LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';
 
 
 @NgModule({
@@ -28,11 +28,12 @@ import {HomeModule, SendAltModule, AddAltModule,
     UserAvatarModule,
     LogoGithubModule,
     LogoTwitterModule,
-    LogoLinkedinModule
+    LogoLinkedinModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class NavigationModule { }

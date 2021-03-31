@@ -34,7 +34,7 @@
           <ul #overflowMenu class="header-overflow-menu" *ngIf="isMenuOpen">
             <li [routerLink]="['user', user.username]">See Profile</li>
             <li [routerLink]="['user', user.username, 'settings']">Settings</li>
-            <li routerLink="/login">Log Out</li>
+            <li routerLink="/login" (click)="signOut()">Log Out</li>
           </ul>
         </button>
       </ng-container>

@@ -10,7 +10,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { PostsModule } from '../posts/posts.module';
 
 // import carbon components and modules
-import { ButtonModule, LinkModule } from 'carbon-components-angular';
+import { ButtonModule, LinkModule, TabsModule } from 'carbon-components-angular';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { ButtonModule, LinkModule } from 'carbon-components-angular';
     NavigationModule,
     ButtonModule,
     LinkModule,
-    PostsModule
+    PostsModule,
+    TabsModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

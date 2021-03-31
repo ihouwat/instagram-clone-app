@@ -1,25 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PostsModule } from 'src/app/posts/posts.module';
+import { Component, OnInit } from '@angular/core';
 
-import { Post } from '../../models/types';
-import { PostManagementService} from '../../shared/services/post-management.service';
+import { User } from '../../models/types';
+import { UserManagementService } from '../../shared/services/user-management.service'
 
 @Component({
   selector: 'app-news-feed',
   templateUrl: './news-feed.component.html',
 })
 export class NewsFeedComponent implements OnInit {
-  
-  posts!:Post[];
+  user:User = this.userService.getUser();
 
-  getPosts = () => {
-    this.posts = this.postService.loadPosts();
-  }
+  constructor(private userService:UserManagementService) { }
 
-  constructor(private postService:PostManagementService) { }
-
-  ngOnInit(): void {
-    this.getPosts();
-  }
+  ngOnInit(): void {}
 
 }

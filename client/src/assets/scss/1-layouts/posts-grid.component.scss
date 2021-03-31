@@ -1,0 +1,7 @@
+// Grid of posts 
+section.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px;
+  margin-top: 52px;
+}

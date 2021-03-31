@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { User, Post } from '../../models/types';
+import { User } from '../../models/types';
 import { UserManagementService } from '../../shared/services/user-management.service';
-import { PostManagementService} from '../../shared/services/post-management.service';
 
 
 @Component({
@@ -12,8 +11,7 @@ import { PostManagementService} from '../../shared/services/post-management.serv
 })
 export class UserProfileComponent implements OnInit {
 
-  user!:User
-  posts:Post[] = this.postService.loadPosts();
+  user!:User;
 
   getUserProfile() {
     this.route.params.subscribe(params => {
@@ -27,7 +25,6 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private route:ActivatedRoute,
     private userService:UserManagementService,
-    private postService:PostManagementService,
     ) {}
 
   ngOnInit(): void {

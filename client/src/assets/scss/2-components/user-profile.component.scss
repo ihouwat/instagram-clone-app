@@ -1,77 +1,62 @@
 // Styles for user display profile
+app-user-info {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 44px;
+  border-bottom: 1px solid $gray-20;
 
-.user-info-container {
-  width: calc(100% - 40px);
-  margin: 30px auto 0;
-  max-width: 935px;
-  
-  app-user-info {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 44px;
-    border-bottom: 1px solid $gray-20;
-
-    .user-info-image {
-      flex-grow: 1;
-      margin-right: 32px;
-      text-align: center;
-      flex-basis: 0;
-      img {
-        border-radius: 50%;
-      }
-    }
-
-    section.user-info-details {
-      flex-grow: 2;
-      flex-basis: 30px;
-
-      .user-info-username {
-        display: flex;
-        margin-bottom: 20px;
-
-        h2 {
-          @include carbon--type-style("productive-heading-04");
-          font-weight: 300;
-        }
-        button {
-          margin-left: 20px;
-        }
-      }
-
-      .user-info-stats {
-        margin-bottom: 20px;
-        display: flex;
-        
-        li {
-          margin-right: 40px;
-        }
-
-        li:last-child { 
-          margin-right: 0px;
-        }
-      }
-
-      .user-info-description {
-        h2 {
-          @include carbon--type-style("body-long-02");
-          font-weight: 700;
-        }
-        p {
-          @include carbon--type-style("body-long-02");
-          color: $text-02;
-        }
-        a {
-          @include carbon--type-style("body-long-02");
-        }
-      }
+  .user-info-image {
+    flex-grow: 1;
+    margin-right: 32px;
+    text-align: center;
+    flex-basis: 0;
+    img {
+      border-radius: 50%;
     }
   }
 
-  section.user-feed-posts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 32px;
-    margin-top: 52px;
-  }
+  section.user-info-details {
+    flex-grow: 2;
+    flex-basis: 30px;
 
+    .user-info-username {
+      display: flex;
+      margin-bottom: 20px;
+
+      h2 {
+        @include carbon--type-style("productive-heading-04");
+        font-weight: 300;
+      }
+      button {
+        margin-left: 20px;
+      }
+    }
+
+    .user-info-stats {
+      margin-bottom: 20px;
+      display: flex;
+      
+      li {
+        margin-right: 40px;
+      }
+
+      li:last-child { 
+        margin-right: 0px;
+      }
+    }
+
+    .user-info-description {
+      h2 {
+        @include carbon--type-style("body-long-02");
+        font-weight: 700;
+      }
+      p {
+        @include carbon--type-style("body-long-02");
+        color: $text-02;
+      }
+      a {
+        @include carbon--type-style("body-long-02");
+      }
+    }
+  }
 }

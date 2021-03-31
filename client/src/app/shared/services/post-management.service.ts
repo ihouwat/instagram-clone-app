@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Post } from '../../models/types';
+import { Post, User } from '../../models/types';
 
 // Mock posts
 import { POSTS } from '../../../mock/postsDB';
@@ -8,8 +8,13 @@ import { POSTS } from '../../../mock/postsDB';
   providedIn: 'root'
 })
 export class PostManagementService {
+  
+  getUserPosts(user:User):Post[] {
+    return POSTS;
+  }
 
-  loadPosts():Post[] {
+  getNewsFeedPosts(user:User):Post[] {
+    // fetch ONLY account owner info. Most of the work will be dnoe by server
     return POSTS;
   }
 

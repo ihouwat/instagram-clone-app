@@ -26,7 +26,7 @@ import { NewsFeedModule } from './news-feed/news-feed.module';
     NavigationModule,
     AuthenticationModule,
     UserFeedModule,
-    PostsModule,
+    PostsModule,  
     NewsFeedModule,
   ],
   providers: [

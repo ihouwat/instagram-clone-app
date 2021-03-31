@@ -1,0 +1,10 @@
+.news-feed-container {
+  @extend .user-info-container;
+
+  .news-feed-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    margin-top: 52px;
+  }
+}

@@ -21,7 +21,7 @@ export class UserManagementService {
   navigateToUserRoute(email: string):void {
     if (this.sessionService.isSignedIn) {
       const userObj = this.findUserByEmail(email);
-      if (userObj) this.router.navigate([`${userObj.username}`]);
+      if (userObj) this.router.navigate([`/user/${userObj.username}`]);
       else this.router.navigate(['/404']);
     }
     else this.router.navigate (['./login']);

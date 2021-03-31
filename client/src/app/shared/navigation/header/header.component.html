@@ -20,7 +20,7 @@
 
     <div class="header-icons">
       <ng-container  *ngIf="signedIn else signInButtons">
-        <a routerLink="www.google.com">
+        <a routerLink="/home">
           <svg ibmIconHome size="20"></svg>
         </a>
         <a routerLink="www.google.com">
@@ -32,14 +32,13 @@
         <button #overflowMenuBtn (click)="toggleMenu()" ibmButton="ghost" size="sm" [iconOnly]=true>
           <img [src]="this.user.imageURL" />
           <ul #overflowMenu class="header-overflow-menu" *ngIf="isMenuOpen">
-            <li [routerLink]="[user.username]">See Profile</li>
-            <li [routerLink]="[user.username, 'settings']">Settings</li>
-            <li routerLink="./login">Log Out</li>
+            <li [routerLink]="['user', user.username]">See Profile</li>
+            <li [routerLink]="['user', user.username, 'settings']">Settings</li>
+            <li routerLink="/login">Log Out</li>
           </ul>
         </button>
       </ng-container>
     </div>
-
     
     <ng-template #signInButtons>
       <button routerLink="login" ibmButton="primary">Log In

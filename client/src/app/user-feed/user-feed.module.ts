@@ -2,7 +2,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // import custom components and modules
-import { UserFeedsRoutingModule } from './user-feeds-routing.module';
+import { UserFeedRoutingModule } from './user-feed-routing.module';
 import { SettingsComponent } from './settings/settings.component';
 import { NavigationModule } from '../shared/navigation/navigation.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -20,7 +20,7 @@ import { ButtonModule, LinkModule } from 'carbon-components-angular';
   ],
   imports: [
     CommonModule,
-    UserFeedsRoutingModule,
+    UserFeedRoutingModule,
     NavigationModule,
     ButtonModule,
     LinkModule,
@@ -28,4 +28,4 @@ import { ButtonModule, LinkModule } from 'carbon-components-angular';
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class UserFeedsModule { }
+export class UserFeedModule { }

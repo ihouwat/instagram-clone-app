@@ -1,5 +1,5 @@
 <a routerLink="../">
-  <ibm-tile theme="light" class="post-wrapper" [id]="post.id" >
+  <ibm-tile theme="light" class="post-wrapper" [id]="post.id">
     <img [src]="post.imageURL"/>
 
     <div class="post-overlay"> 
@@ -14,4 +14,11 @@
     </div>
 
   </ibm-tile>
+
 </a>
+
+<div class="post-owner" *ngIf="hasNewsFeedRoute()"> 
+  <img [src]="post.owner.imageURL" />
+  <a ibmLink [inline]=false [routerLink]="['/user', post.owner.username]">{{post.owner.username}}</a>
+  <span class="date">{{post.date | timeAgo }}</span>
+</div>

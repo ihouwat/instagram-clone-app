@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 
 // mock db
 import { UserManagementService } from '../shared/services/user-management.service';
@@ -32,7 +31,6 @@ export class AuthenticationService {
     this.userMgmtService.navigateToUserRoute(this.loginInfo.email);
   }
 
-  constructor(private userMgmtService: UserManagementService,
-    private router:Router) { }
+  constructor(private userMgmtService: UserManagementService) { }
   
 }

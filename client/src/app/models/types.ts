@@ -22,7 +22,7 @@ export interface User {
 
 export interface Post {
   id:number;
-  owner: string;
+  owner: User;
   imageURL:string;
   numOfLikes:number;
   numOfComments:number;

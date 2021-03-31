@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NewsFeedComponent } from './news-feed/news-feed/news-feed.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component'
 
 
@@ -10,9 +11,10 @@ const routes: Routes = [
   { 
     // TODO: implement user route that automatically redirects to username
     // Ex: '/igor' and NOT '/user/igor'
-    path: ':username',
-    loadChildren: () => import('./user-feeds/user-feeds-routing.module').then(m => m.UserFeedsRoutingModule)
+    path: 'user/:username',
+    loadChildren: () => import('./user-feed/user-feed-routing.module').then(m => m.UserFeedRoutingModule)
   },
+  { path: 'home', component: NewsFeedComponent},
   {
     path: '',
     redirectTo: 'login',

@@ -12,11 +12,12 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
   onSubmit():void {
-    this.authService.validateAndLogin(this.loginForm.value);
+    this.authService.validateLoginForm(this.loginForm.value);
   }
 
-  constructor(private fb:FormBuilder,
-              private authService:AuthenticationService) { }
+  constructor(
+    private fb:FormBuilder,
+    private authService:AuthenticationService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({

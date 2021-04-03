@@ -9,10 +9,10 @@ import {AuthenticationService } from '../authentication.service';
 export class SignUpComponent implements OnInit  {
 
   // Main form group
-  signUpForm!: FormGroup;
+  signUpForm!:FormGroup;
 
   // Form step counter
-  currentStep!: number;
+  currentStep!:number;
 
   // Steps for progress indicator
   steps = [
@@ -63,8 +63,9 @@ export class SignUpComponent implements OnInit  {
     };
   }
 
-  constructor(private fb:FormBuilder, 
-              private authService:AuthenticationService) { }  
+  constructor(
+    private fb:FormBuilder, 
+    private authService:AuthenticationService) { }  
 
   ngOnInit(): void {
     

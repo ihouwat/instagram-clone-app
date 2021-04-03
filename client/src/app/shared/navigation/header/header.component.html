@@ -30,10 +30,10 @@
           <svg ibmIconAddAlt size="20"></svg>
         </a>
         <button #overflowMenuBtn (click)="toggleMenu()" ibmButton="ghost" size="sm" [iconOnly]=true>
-          <img [src]="this.user.imageURL" />
+          <img [src]="this.accountOwner.imageURL" />
           <ul #overflowMenu class="header-overflow-menu" *ngIf="isMenuOpen">
-            <li [routerLink]="['user', user.username]">See Profile</li>
-            <li [routerLink]="['user', user.username, 'settings']">Settings</li>
+            <li [routerLink]="['user', accountOwner.username]">See Profile</li>
+            <li [routerLink]="['user', accountOwner.username, 'settings']">Settings</li>
             <li routerLink="/login" (click)="signOut()">Log Out</li>
           </ul>
         </button>

@@ -1,4 +1,4 @@
-footer {
+footer.igstagram-footer {
   border-top: 1px solid $gray-20;
   margin-top: 64px;
   width: 100%;
@@ -6,7 +6,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  .footer-icons {
+  .igstagram-footer-icons {
     margin-top: 32px;
     margin-bottom: 24px;
     svg {

@@ -1,19 +1,12 @@
-IMPORTANT
-User feed and news feed are identical. Need to merge them 
-  One solution: create post feed compoment in posts module and export that to user and news feeds
-  Annoying part is that the user feed and news feed still share a layout component (perhaps make this into a shared 'body wrap component')
-
 To dos found in:
 
 - App routing module
   Remove 'user' from Users routing module
-- User Management Service
-  - isOwner flag to specify user permissions etc.
-- Authentication Service
-  Eventually need http interceptor service for 
-    404 routing
-    jwt safety
-    routing to home OR login page
+- All form validations
+- Eventually need http interceptor service for 
+  404 routing
+  jwt safety
+  routing to home OR login page
 
 
 - technologies added:

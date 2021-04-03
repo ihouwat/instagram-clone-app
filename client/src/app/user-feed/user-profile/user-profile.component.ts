@@ -17,7 +17,7 @@ export class UserProfileComponent implements OnInit {
     this.route.params.subscribe(params => {
       // get the username out of the route params
       const username = params['username'];
-      this.user = this.userService.getUser();
+      this.user = this.userService.getUser(username);
     })
 
   }

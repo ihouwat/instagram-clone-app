@@ -23,7 +23,7 @@ export const POSTS:any = [
     numOfLikes: 11,
     numOfComments: 3,
     // comments:Array<String>;
-    date: new Date()
+    date: new Date('April 2, 2021 13:24:00')
   },
   {
     id:3,
@@ -36,7 +36,7 @@ export const POSTS:any = [
     numOfLikes: 1,
     numOfComments: 30,
     // comments:Array<String>;
-    date: new Date()
+    date: new Date('April 1, 2021')
   },
   {
     id:4,
@@ -49,7 +49,7 @@ export const POSTS:any = [
     numOfLikes: 10,
     numOfComments: 50,
     // comments:Array<String>;
-    date: new Date()
+    date: new Date('March 17, 2021')
   },
   {
     id:5,
@@ -62,7 +62,7 @@ export const POSTS:any = [
     numOfLikes: 11,
     numOfComments: 3,
     // comments:Array<String>;
-    date: new Date()
+    date: new Date('February 17, 2021')
   },
   {
     id:6,
@@ -75,6 +75,6 @@ export const POSTS:any = [
     numOfLikes: 74,
     numOfComments: 21,
     // comments:Array<String>;
-    date: new Date()
+    date: new Date('December 17, 2020')
   },
 ]

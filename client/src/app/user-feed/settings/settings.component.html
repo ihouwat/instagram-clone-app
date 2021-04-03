@@ -1,4 +1,135 @@
-<ibm-tabs type="container" [followFocus]=true [isNavigation]=false [cacheActive]=true>
-  <ibm-tab heading="one">Tab Content 1</ibm-tab>
-  <ibm-tab heading="two">Tab Content 2</ibm-tab>
-</ibm-tabs>
+<div class="settings-form-wrapper">
+
+  <ibm-tabs type="container" [followFocus]=true [isNavigation]=false [cacheActive]=true>
+
+    <ibm-tab heading="Account">
+
+      <form [formGroup]="accountSettingsForm" (ngSubmit)="onSubmit(accountSettingsForm)">
+        
+        <img src="{{accountOwner.imageURL}}" width="50" />
+
+        <h2>{{accountOwner.username}}</h2>
+        <a ibmLink>Change Profile Photo</a>
+
+        <ibm-label>
+          <label>Full Name</label>
+        <input
+          formControlName="fullName"
+          ibmText
+          size="md"
+          theme="light"
+          placeholder="{{accountOwner.fullName}}"
+          autocomplete="autocomplete"
+        />
+        </ibm-label>
+
+        <ibm-label
+          [invalid]=false
+          invalidText="Invalid email address">
+          <label>Email</label>
+        <input
+          formControlName="email"
+          ibmText
+          size="md"
+          theme="light"
+          placeholder="{{accountOwner.email}}"
+          autocomplete="autocomplete"
+        />
+        </ibm-label>
+        
+        <ibm-label
+        [invalid]=false
+        invalidText="Invalid website address">
+        <label>Website</label>
+        <input
+          formControlName="website"
+          ibmText
+          size="md"
+          theme="light"
+          placeholder="{{accountOwner.website}}"
+          autocomplete="autocomplete"
+        />
+        </ibm-label>
+
+        <ibm-label
+          helperText="Write a short profile description, under 150 words."
+          [invalid]=false
+          invalidText="You have exceeded the 150 word character count">
+          <label>Description</label>
+        <textarea
+          ibmTextArea
+          formControlName="description"
+          [disabled]=false
+          theme="light"
+          [rows]="4"
+          [cols]="1"
+          aria-label="textarea"
+          placeholder="{{accountOwner.description}}"></textarea>
+        </ibm-label>
+
+
+        <button type="submit" ibmButton="secondary">Cancel</button>
+        <button type="submit" ibmButton="primary">Submit Changes</button>
+
+      </form>
+
+    </ibm-tab>
+
+    <ibm-tab heading="Change Password">
+
+      <form 
+        [formGroup]="changePasswordForm" 
+        (ngSubmit)="onSubmit(changePasswordForm)">
+
+        <ibm-label
+          [invalid]=false
+          invalidText="Invalid password">
+          <label>Old password</label>
+          <input
+            formControlName="oldPassword"
+            ibmText
+            size="md"
+            theme="light"
+            placeholder=""
+            autocomplete="autocomplete"
+          />
+          </ibm-label>
+  
+          <ibm-label
+          [invalid]=false
+          invalidText="Invalid website address">
+          <label>New password</label>
+          <input
+            formControlName="newPassword"
+            ibmText
+            size="md"
+            theme="light"
+          />
+          </ibm-label>
+  
+          <ibm-label
+          [invalid]=false
+          invalidText="Passwords do not match">
+          <label>Confirm new password</label>
+          <input
+            formControlName="confirmNewPassword"
+            ibmText
+            size="md"
+            theme="light"
+          />
+          </ibm-label>
+
+          <button type="submit" ibmButton="primary">Change Password</button>
+
+          <app-form-modal
+          (changePasswordChange)="changePasswordChange($event)"></app-form-modal>
+
+      </form>
+
+    </ibm-tab>
+    
+  </ibm-tabs>
+</div>
+
+
+

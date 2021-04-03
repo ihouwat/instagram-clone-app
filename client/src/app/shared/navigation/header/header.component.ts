@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('overflowMenu') overflowMenu!:ElementRef;
   isMenuOpen:boolean = false;
 
-  user!:User;
+  accountOwner!:User;
   signedIn:boolean = this.sessionService.isSignedIn;
 
   constructor(
@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit():void {
     // Fetch sign in status on log in
-    if (this.signedIn) this.user = this.userService.getUser();
+    if (this.signedIn) this.accountOwner = this.userService.getAccountOwner();
   }
 
   // If not signed in, disable search box

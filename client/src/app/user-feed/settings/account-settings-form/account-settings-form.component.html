@@ -1,9 +1,10 @@
 <form [formGroup]="accountSettingsForm" (ngSubmit)=onSubmit()>
-        
-  <img src="{{accountOwner.imageURL}}" width="50" />
-
-  <h2>{{accountOwner.username}}</h2>
-  <a ibmLink>Change Profile Photo</a>
+  
+  <section class="profile-name-and-image">
+    <img src="{{accountOwner.imageURL}}" width="50" />
+    <h2>{{accountOwner.username}}</h2>
+    <a ibmLink>Change Profile Photo</a>
+  </section>
 
   <ibm-label>
     <label>Full Name</label>
@@ -61,8 +62,9 @@
     placeholder="{{accountOwner.description}}"></textarea>
   </ibm-label>
 
-
-  <button type="submit" ibmButton="secondary">Cancel</button>
-  <button type="submit" ibmButton="primary">Submit Changes</button>
+  <section class="settings-form-buttons">
+    <button type="button" (click)="resetForm()" ibmButton="secondary">Reset</button>
+    <button type="submit" ibmButton="primary">Submit Changes</button>
+  </section>
 
 </form>

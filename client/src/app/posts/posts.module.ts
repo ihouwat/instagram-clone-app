@@ -10,11 +10,12 @@ import { NgPipesModule } from 'ngx-pipes';
 // import carbon design modules
 import { FavoriteFilledModule, ChatModule } from '@carbon/icons-angular';
 import { TilesModule, LinkModule } from 'carbon-components-angular';
+import { PostPageComponent } from './post-page/post-page.component';
 
 @NgModule({
   declarations: [
     PostTileComponent, 
-    PostsGridComponent
+    PostsGridComponent, PostPageComponent
   ],
   imports: [
     CommonModule,

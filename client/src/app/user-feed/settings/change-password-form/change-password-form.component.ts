@@ -1,22 +1,30 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { User } from 'src/app/models/types';
+import { FormModalComponent } from '../form-modal/form-modal.component';
 import { SettingsFormService } from '../settings-form.service';
 
 @Component({
   selector: 'app-change-password-form',
   templateUrl: './change-password-form.component.html',
-  styleUrls: ['./change-password-form.component.scss']
 })
 export class ChangePasswordForm implements OnInit {
 
-  @Input() accountOwner!:User;
   changePasswordForm!:FormGroup;
-  @Output() openDangerModal = new EventEmitter<Boolean>();
+  
+  // Connection to form modal child component
+  @ViewChild(FormModalComponent) modal!:FormModalComponent;
+  modalIsOpen:boolean = false; 
 
+  // When submitting pwd change, open danger modal
   onSubmit() {
-    this.openDangerModal.emit(true);
-    // this.settingsService.submitPasswordChange(this.changePasswordForm);
+    this.modal.openModal();
+  }
+
+  // When user confirms password update in modal, send info to service
+  updatePassword(flag:Boolean) {
+    flag === true 
+    ? this.settingsService.submitPasswordChange(this.changePasswordForm)
+    : null;
   }
 
   constructor(

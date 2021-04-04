@@ -7,27 +7,26 @@ import { UserManagementService } from 'src/app/shared/services/user-management.s
   providedIn: 'root'
 })
 export class SettingsFormService {
-  
+
+  /* 
+    If user changes account details, pass on to the user service
+  */
+  submitAccountDetailChanges(fg:FormGroup) {
+    this.userService.setUserAccountDetails(fg);
+  }
+
   /* 
     If user confirms password change in modal child component,
-    pass on to the server
+    pass on to the user service
   */
-  // changePasswordChange(val:Boolean) {
-  //   console.log(val);
-  //   console.log(this.changePasswordForm.value);
-  // Open 'are you sure' modal if changing password
-  // this.modal.openModal();
-  // }
-
-  submitAccountDetailChanges(fg:FormGroup) {
-    console.log(fg.value);
-  }
-
   submitPasswordChange(fg:FormGroup) {
+    this.userService.setUserPassword(fg);
   }
 
-  getAccountOwner():User {
+  // Getter method to populate the account details form
+  getAccount():User {
     return this.userService.getAccountOwner();
   }
+
   constructor(private userService:UserManagementService) {}
 }

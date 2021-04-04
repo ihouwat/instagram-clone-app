@@ -6,6 +6,7 @@ import { SessionManagementService } from './session-management.service';
 
 // Mock users
 import { USERS } from '../../../mock/userDB';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,14 @@ export class UserManagementService {
   findUserByUserName(username:string) {
     let userObj = USERS.filter((u:User) => u.username === username);
     return userObj[0];
+  }
+
+  setUserAccountDetails(fg:FormGroup) {
+    console.log(fg.value);
+  }
+
+  setUserPassword(fg:FormGroup) {
+    console.log(fg.value);
   }
 
   constructor(

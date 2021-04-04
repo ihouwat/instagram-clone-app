@@ -20,16 +20,14 @@ export class HeaderComponent implements OnInit {
     private sessionService:SessionManagementService,
     private userService:UserManagementService,
     private renderer:Renderer2) {
-      if (this.signedIn) {
-        // Detects mouse click events
-        this.renderer.listen('window', 'click', (e:Event) => {
-          // if the mouse click happens outside the button or menu, close the menu
-          if(!this.overflowMenu.nativeElement.contains(e.target)
-            && !this.overflowMenuBtn.nativeElement.contains(e.target)) {
-            this.isMenuOpen = false;
-          }
-        });
-      }
+      // Detects mouse click events
+      this.renderer.listen('window', 'click', (e:Event) => {
+        // if the mouse click happens outside the button or menu, close the menu
+        if(!this.overflowMenu?.nativeElement.contains(e.target)
+          && !this.overflowMenuBtn?.nativeElement.contains(e.target)) {
+          this.isMenuOpen = false;
+        }
+      });
     }
 
   ngOnInit():void {

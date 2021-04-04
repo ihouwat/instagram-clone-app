@@ -4,15 +4,14 @@
 
     <ibm-tab heading="Account">
 
-      <app-account-settings-form [accountOwner]="accountOwner"></app-account-settings-form>
+      <app-account-settings-form></app-account-settings-form>
 
     </ibm-tab>
 
     <ibm-tab heading="Change Password">
 
-      <app-change-password-form [accoutOwner]="accountOwner" [openDangerModal]="openModalEvent($event)"></app-change-password-form>
-        
-      <app-form-modal></app-form-modal>
+      <!-- Note: app-form-modal is in the app-change-password-form template -->
+      <app-change-password-form></app-change-password-form>
       
     </ibm-tab>
     

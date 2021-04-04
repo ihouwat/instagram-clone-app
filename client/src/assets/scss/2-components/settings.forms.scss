@@ -1,0 +1,56 @@
+.settings-form-wrapper {
+  display: flex;
+  justify-content: center;
+  
+  ibm-tabs {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-name-and-image {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-column-gap: 32px;
+    margin-bottom: 16px;
+
+    img {
+      border-radius: 50%;
+      border: 1px solid $gray-70;
+    }
+
+    h2 {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      align-self: start;
+      @include carbon--type-style("productive-heading-03");
+    }
+
+    a {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      align-self: end;
+      @include carbon--type-style("label-01");
+    }
+  }
+
+  ibm-label {
+    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+  }
+
+  section.settings-form-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      flex-basis: calc(50% - 8px);
+      &:last-of-type {
+        margin-left: 16px;
+      }
+    }
+  }
+
+}

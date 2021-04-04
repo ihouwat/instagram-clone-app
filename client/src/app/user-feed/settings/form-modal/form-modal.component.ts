@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { User } from 'src/app/models/types';
 
 @Component({
   selector: 'app-form-modal',
@@ -10,15 +9,15 @@ export class FormModalComponent implements OnInit {
 
   modalIsOpen:boolean = false;
 
-  @Output() changePasswordChange = new EventEmitter<Boolean>();
+  @Output() confirmPasswordUpdate = new EventEmitter<Boolean>();
 
   openModal():boolean {
     return this.modalIsOpen = true;
   }
 
   closeModal(e:Event):boolean {
-    if ((e.target as Element).id === "Update")
-      this.changePasswordChange.emit(true);
+    if ((e.target as Element).id === "confirmPasswordUpdate")
+      this.confirmPasswordUpdate.emit(true);
     return this.modalIsOpen = false;
   }
 

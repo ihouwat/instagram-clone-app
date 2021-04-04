@@ -13,6 +13,8 @@ import { PostsModule } from '../posts/posts.module';
 // import carbon components and modules
 import { ButtonModule, LinkModule, TabsModule, InputModule, ModalModule, ModalService } from 'carbon-components-angular';
 import { FormModalComponent } from './settings/form-modal/form-modal.component';
+import { AccountSettingsForm } from './settings/account-settings-form/account-settings-form.component';
+import { ChangePasswordForm } from './settings/change-password-form/change-password-form.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormModalComponent } from './settings/form-modal/form-modal.component';
     UserProfileComponent,
     UserInfoComponent,
     FormModalComponent,
+    AccountSettingsForm,
+    ChangePasswordForm,
   ],
   imports: [
     CommonModule,

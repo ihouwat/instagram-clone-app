@@ -1,7 +1,7 @@
 <ng-container>
 
-  <ibm-modal [open]="modalIsOpen" (overlaySelected)="closeModal($event)">
-    <ibm-modal-header (closeSelect)="closeModal($event)">
+  <ibm-modal [open]="modalIsOpen" (overlaySelected)="modalIsOpen = false">
+    <ibm-modal-header (closeSelect)="modalIsOpen = false">
       <p class="bx--modal-header__heading bx--type-beta">Update Password</p>
     </ibm-modal-header>
     <div class="bx--modal-content">
@@ -17,7 +17,7 @@
         <button
           ibmButton="danger"
           (click)="closeModal($event)"
-          id="Update"
+          id="confirmPasswordUpdate"
           [attr.modal-primary-focus]="true">
           Update
         </button>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { User } from 'src/app/models/types';
+import { User } from 'src/app/model/types';
 import { SettingsFormService } from '../settings-form.service';
 
 @Component({

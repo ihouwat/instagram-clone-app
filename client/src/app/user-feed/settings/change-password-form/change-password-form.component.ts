@@ -13,7 +13,6 @@ export class ChangePasswordForm implements OnInit {
   
   // Connection to form modal child component
   @ViewChild(FormModalComponent) modal!:FormModalComponent;
-  modalIsOpen:boolean = false; 
 
   // When submitting pwd change, open danger modal
   onSubmit() {

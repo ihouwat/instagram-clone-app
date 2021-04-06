@@ -1,4 +1,4 @@
-<a routerLink="../">
+<a [routerLink]="['/post', post.id]">
   <ibm-tile theme="light" class="post-wrapper" [id]="post.id">
     <img [src]="post.imageURL"/>
 

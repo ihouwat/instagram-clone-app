@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { User } from '../models/types';
+import { User } from '../model/types';
 // mock db
 import { USERS } from '../../mock/userDB';
 

@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { SessionManagementService } from '../../services/session-management.service';
 import { UserManagementService } from '../../services/user-management.service';
-import { User } from '../../../models/types';
+import { User } from '../../../model/types';
  
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   isMenuOpen:boolean = false;
 
   accountOwner!:User;
-  signedIn:boolean = this.sessionService.isSignedIn;
+  signedIn:boolean = this.sessionService.getSignInStatus();
 
   constructor(
     private sessionService:SessionManagementService,

@@ -1,3 +1,11 @@
+Post Page Component:
+- Form for adding comment
+- Links to user in header
+- Follow button implementation
+- Favorite button implementation
+- Mock postsDB: add more post comments.
+- Post has to be top of page when view opens
+
 To dos found in:
 
 - App routing module

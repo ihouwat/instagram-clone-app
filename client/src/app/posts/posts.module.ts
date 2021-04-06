@@ -8,8 +8,8 @@ import { PostsGridComponent } from './posts-grid/posts-grid.component';
 import { NgPipesModule } from 'ngx-pipes';
 
 // import carbon design modules
-import { FavoriteFilledModule, ChatModule } from '@carbon/icons-angular';
-import { TilesModule, LinkModule } from 'carbon-components-angular';
+import { FavoriteFilledModule, ChatModule, FavoriteModule } from '@carbon/icons-angular';
+import { TilesModule, LinkModule, InputModule } from 'carbon-components-angular';
 import { PostPageComponent } from './post-page/post-page.component';
 
 @NgModule({
@@ -23,7 +23,9 @@ import { PostPageComponent } from './post-page/post-page.component';
     FavoriteFilledModule,
     ChatModule,
     TilesModule,
+    InputModule,
     LinkModule,
+    FavoriteModule,
     NgPipesModule
   ],
   exports: [

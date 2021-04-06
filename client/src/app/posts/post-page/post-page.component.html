@@ -1,1 +1,73 @@
-<p>post-page works!</p>
+<div class="post-page-wrapper">
+
+  <section class="post-page-image">
+    <img src="{{post.imageURL}}" width="600" />
+  </section>
+  
+  <section class="post-page-comments">
+
+    <div class="post-page-header">
+
+      <div class="post-page-owner-image">
+        <a ibmLink [routerLink]="['/user', post.owner.username]">
+          <img src="{{post.owner.imageURL}}" width="32"/>
+        </a>
+      </div>
+      
+      <div class="post-page-owner-links"> 
+        <a>{{post.owner.username}}</a>
+        <span class="post-page-dot">•</span>
+        <a *ngIf="!isPostOwner() && isSignedIn()">Follow</a>
+        <span class="post-page-dot">•</span>
+        <a>See Post</a>
+      </div>
+
+    </div>
+    
+    <ul class="post-page-comment-list">
+      <li *ngFor="let comment of post.comments">
+
+        <div class="post-page-commenter-image">
+          <a  [routerLink]="['/user', comment.sender.username]">
+            <img src="{{comment.sender.imageURL}}" width="32"/>
+          </a>
+        </div>
+
+        <div class="post-page-comment-content">
+          <p>
+            <span class="post-comment-sender">{{comment.sender.username}} </span> 
+            {{comment.comment}}
+          </p>
+          <span class="post-comment-date">{{comment.date | timeAgo}}</span>
+        </div>
+
+      </li>
+
+    </ul>
+
+    <div class="post-page-stat">
+
+      <div class="post-page-like-btn">
+        <svg ibmIconFavorite size="20" title="Number of likes"></svg>
+        <span *ngIf="post.numOfLikes === 1 else manyLikes">{{post.numOfLikes}} like</span>
+        <ng-template #manyLikes>{{post.numOfLikes}} likes</ng-template>
+      </div>
+
+      <span class="post-page-date">{{post.date | date}}</span>
+
+    </div>
+
+    <div class="post-page-comment-text-input">
+      <input
+        ibmText
+        size="xl"
+        theme="light"
+        placeholder="Add a comment..."
+        >
+    </div>
+    
+  </section>
+
+</div>
+
+

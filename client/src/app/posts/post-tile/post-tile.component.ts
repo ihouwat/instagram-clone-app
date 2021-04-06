@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Post } from '../../models/types';
+import { Post } from '../../model/types';
 
 @Component({
   selector: 'app-post-tile',

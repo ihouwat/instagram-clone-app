@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Post, User } from '../../models/types';
+import { Post, User } from '../../model/types';
 import { PostManagementService } from '../../shared/services/post-management.service'
 
 

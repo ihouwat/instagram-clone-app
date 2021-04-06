@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/models/types';
+import { User } from 'src/app/model/types';
 import { SessionManagementService } from '../../shared/services/session-management.service'
 
 @Component({
@@ -11,10 +11,10 @@ export class UserInfoComponent implements OnInit {
   @Input() user!:User;
   isSignedIn!:boolean;
 
-  constructor(private sessionMgmtService:SessionManagementService) { }
+  constructor(private sessionService:SessionManagementService) { }
 
   ngOnInit(): void {
-    this.isSignedIn = this.sessionMgmtService.isSignedIn;
+    this.isSignedIn = this.sessionService.getSignInStatus();
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { User } from 'src/app/models/types';
+import { User } from 'src/app/model/types';
 import { UserManagementService } from 'src/app/shared/services/user-management.service';
 
 @Injectable({

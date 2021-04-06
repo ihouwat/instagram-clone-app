@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { User } from '../../models/types';
+import { User } from '../../model/types';
 import { Router } from "@angular/router";
 import { SessionManagementService } from './session-management.service';
 

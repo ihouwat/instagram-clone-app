@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { User } from '../../models/types';
+import { User } from '../../model/types';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,12 @@ export class SessionManagementService {
   // * This service is to manage sessions, Redis connection, ??JWT??
 
   // Stay signed in for dev mode   
-  isSignedIn:boolean = true;
+  private isSignedIn:boolean = true;
     
+  getSignInStatus():boolean {
+    return this.isSignedIn;
+  }
+
   signInSession(user:User) {
     this.isSignedIn = true;
     sessionStorage.setItem('accountOwner', JSON.stringify(user));

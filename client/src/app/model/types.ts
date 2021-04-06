@@ -26,7 +26,7 @@ export interface Post {
   imageURL:string;
   numOfLikes:number;
   numOfComments:number;
-  comments:Array<String>;
+  comments:Array<Comment>;
   date:Date;
 }
 
@@ -36,8 +36,9 @@ export interface Post {
 
 export interface Comment {
   comment:string;
-  id:number; // Will be the post's id
+  postId:number; // Will be the post's id
   date:Date;
+  sender:User;
 }
 
 //==============================================================================
@@ -45,7 +46,7 @@ export interface Comment {
 //==============================================================================
 
 export interface Chatroom {
-  id:number;
+  postId:number;
   participants:Array<User>;
   date:Date;
 }

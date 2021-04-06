@@ -1,0 +1,103 @@
+.post-page-wrapper {
+  display: flex;
+  max-height: 600px; // match the post image height
+  background-color: $white-0;
+
+  section.post-page-comments {
+    
+    width: 100%;
+    position: relative;
+
+    img {
+      border-radius: 50%;
+    }
+
+    .post-page-header {
+      display: flex;
+      align-items: center;
+      height: 72px;
+      padding: 16px;
+      border-bottom: 1px solid $ui-01;
+      
+      .post-page-owner-image {
+        height: 32px;
+        width: 32px;
+        margin-right: 16px;
+        display: flex;
+      }
+
+      .post-page-owner-links {
+        span.post-page-dot {
+          margin: 0 4px;
+        }
+      }
+    }
+
+    ul.post-page-comment-list {
+      padding: 16px;
+      overflow-Y: scroll;
+      position: sticky;
+      height: calc(100vh - 260px);
+
+      li {
+        margin-bottom: 24px;
+        display: flex;
+
+        .post-page-commenter-image {
+          margin-right: 16px;
+        }
+
+        .post-page-comment-content {
+          p {
+            @include carbon--type-style("body-long-01");
+            margin-bottom: 16px;
+          }
+          span.post-comment-sender {
+            font-weight: 700;
+          }
+          .post-comment-date {
+            @include carbon--type-style("label-01");
+            color: $text-03;
+          }
+        }
+      }
+    }
+
+    .post-page-stat {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 16px;
+      border-bottom: 1px solid $ui-01;
+      border-top: 1px solid $ui-01;
+
+      .post-page-like-btn {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        svg {
+          margin-right: 16px;
+          fill: $icon-01;
+        }
+        span {
+          @include carbon--type-style("body-long-01");
+          color: $text-02;
+        }
+      }
+      .post-page-date {
+        @include carbon--type-style("label-01");
+        color: $text-03;
+      }
+    }
+
+    .post-page-comment-text-input {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      
+      input {
+        border: 0;
+        height: 52px;
+      }
+    }
+  }
+}

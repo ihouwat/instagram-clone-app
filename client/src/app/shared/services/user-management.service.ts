@@ -17,13 +17,13 @@ export class UserManagementService {
 
   // For now, manually get user email from login page and redirect to user page
   navigateToUserRoute(username: string):void {
-    const user = this.findUserByUserName(username);
+    const user = this.findSingleUserByUsername(username);
     if (user) this.router.navigate([`/user/${user.username}`]);
     else this.router.navigate(['/404']);
   }
 
   getUser(username:string):User {
-    const user = this.findUserByUserName(username);
+    const user = this.findSingleUserByUsername(username);
     return user;
   }
 
@@ -31,9 +31,14 @@ export class UserManagementService {
     return this.sessionService.getSessionInfo();
   }
 
-  findUserByUserName(username:string) {
+  findSingleUserByUsername(username:string) {
     let userObj = USERS.filter((u:User) => u.username === username);
     return userObj[0];
+  }
+
+  searchForUsers(input:string) {
+    let usersList = USERS.filter((u:User) => u.username.toLowerCase().includes(input));
+    return usersList;
   }
 
   // From settings page

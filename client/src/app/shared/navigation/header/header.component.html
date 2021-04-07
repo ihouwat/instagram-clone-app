@@ -14,9 +14,29 @@
         [placeholder]=""
         [disabled]="disableSearchBox()"
         size="sm"
+        (valueChange)="searchBoxValueChange($event)"
+        (clear) = "clearSearchBox()"
         >
       </ibm-search>
       
+      <ul class="search-results-display" *ngIf="searchResultsDisp">
+
+        <ng-container *ngIf="searchResults.length > 0 else emptySearch">
+          <li *ngFor="let result of searchResults" >
+            <a [routerLink]="['user', result.username]">
+              <img [src]="result.imageURL" width="40" />
+              <span>{{result.username}}</span>
+              <span>{{result.fullName}}</span>
+            </a>
+          </li>
+        </ng-container>
+
+        <ng-template #emptySearch>
+          <li>Nothing</li>
+        </ng-template>
+        
+      </ul>
+
     </div>
 
     <div class="header-icons">
@@ -30,7 +50,7 @@
         <a routerLink="www.google.com">
           <svg ibmIconAddAlt size="20"></svg>
         </a>
-        <button #overflowMenuBtn (click)="toggleMenu()" ibmButton="ghost" size="sm" [iconOnly]=true>
+        <button #overflowMenuBtn (click)="toggleProfileMenu()" ibmButton="ghost" size="sm" [iconOnly]=true>
           <img [src]="this.accountOwner.imageURL" />
           <ul #overflowMenu class="header-overflow-menu" *ngIf="isMenuOpen">
             <li [routerLink]="['user', accountOwner.username]">See Profile</li>

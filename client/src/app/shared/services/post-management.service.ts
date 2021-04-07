@@ -11,11 +11,12 @@ import { UserManagementService } from './user-management.service';
 export class PostManagementService {
   
   getUserPosts(user:User):Post[] {
-    return POSTS;
+    let userPosts = POSTS.filter((p:any) => p.owner.username === user.username);
+    return userPosts;
   }
 
   getNewsFeedPosts(user:User):Post[] {
-    // fetch ONLY account owner info. Most of the work will be dnoe by server
+    // fetch posts by other friends ONLY account owner info. Most of the work will be dnoe by server
     return POSTS;
   }
 

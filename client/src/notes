@@ -1,3 +1,9 @@
+Header Searchbox to-dos:
+- Grid display with username and full name displayed vertically
+- Horizontal spacing of the <li> child items
+- 'Nothing' <li> use-case displays in the middle of the <ul> container 
+- Add MouseEvent listener for closing search box when user clicks mouse outside 
+
 To dos found in:
 
 - App routing module

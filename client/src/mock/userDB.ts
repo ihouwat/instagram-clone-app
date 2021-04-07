@@ -10,7 +10,13 @@ export const USERS:any = [
     numOfFollowers:50,
     numFollowing:30,
     description:"This is the official fanpage of John Doe",
-    website:"www.john.com"
+    website:"www.john.com",
+    listOfFollowing: [],
+    likedPosts: [
+      { id: 4 },
+      { id: 5 },
+      { id: 6 },
+    ]
   },
   {
     username:'igor',
@@ -23,6 +29,16 @@ export const USERS:any = [
     numOfFollowers:500,
     numFollowing:3033,
     description:"This is the official fanpage of Igor Houwat",
-    website:"www.igor.com"
+    website:"www.igor.com",
+    listOfFollowing: [
+      {
+        username: 'john'
+      }
+    ],
+    likedPosts: [
+      { id: 1 },
+      { id: 2 },
+      { id: 3},
+    ]
   },
 ]

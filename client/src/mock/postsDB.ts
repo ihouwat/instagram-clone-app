@@ -56,6 +56,51 @@ export const POSTS:any = [
         },
         date:new Date()
       },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
     ],
   },
   {
@@ -108,6 +153,51 @@ export const POSTS:any = [
       },
       {
         comment:"Awesome, thanks!! :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
         postId:1,
         sender: {
           username: 'john',
@@ -174,6 +264,51 @@ export const POSTS:any = [
         },
         date:new Date()
       },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
     ],
   },
   {
@@ -226,6 +361,51 @@ export const POSTS:any = [
       },
       {
         comment:"Awesome, thanks!! :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
         postId:1,
         sender: {
           username: 'john',
@@ -292,6 +472,51 @@ export const POSTS:any = [
         },
         date:new Date()
       },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
     ],
   },
   {
@@ -344,6 +569,33 @@ export const POSTS:any = [
       },
       {
         comment:"Awesome, thanks!! :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
+        postId:1,
+        sender: {
+          username: 'john',
+          imageURL: 'https://ps.w.org/tiny-compress-images/assets/icon-256x256.png?rev=1088385'
+        },
+        date:new Date()
+      },
+      {
+        comment:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. :)",
         postId:1,
         sender: {
           username: 'john',

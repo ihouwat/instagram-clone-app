@@ -15,11 +15,20 @@
       </div>
       
       <div class="post-page-owner-links"> 
-        <a>{{post.owner.username}}</a>
+        <a class="post-page-owner-username" 
+          ibmLink [routerLink]="['/user', post.owner.username]">@{{post.owner.username}}</a>
         <span class="post-page-dot">•</span>
-        <a *ngIf="!isPostOwner() && isSignedIn()">Follow</a>
-        <span class="post-page-dot">•</span>
-        <a>See Post</a>
+
+        <ng-content select="followBtns" *ngIf="isSignedIn()">
+        </ng-content>
+        <div #followBtns>
+          <button (click)="followUserBtn()"  *ngIf="!isPostOwner() && !followsUser()">Follow</button>
+          <button (click)="unfollowUserBtn()" *ngIf="!isPostOwner() && followsUser()">Unfollow</button>
+        </div>
+
+        <span *ngIf="!isPostOwner() && isSignedIn()" class="post-page-dot">•</span>
+        
+        <a ibmLink [routerLink]="['/post', post.id]">See Post</a>
       </div>
 
     </div>
@@ -35,7 +44,7 @@
 
         <div class="post-page-comment-content">
           <p>
-            <span class="post-comment-sender">{{comment.sender.username}} </span> 
+            <span class="post-comment-sender">@{{comment.sender.username}} </span> 
             {{comment.comment}}
           </p>
           <span class="post-comment-date">{{comment.date | timeAgo}}</span>
@@ -48,7 +57,16 @@
     <div class="post-page-stat">
 
       <div class="post-page-like-btn">
-        <svg ibmIconFavorite size="20" title="Number of likes"></svg>
+
+        <svg 
+          *ngIf="hasUserLikedPost() else unfilledFavoriteIcon"
+          (click)="toggleLikePostBtn()" 
+          class="filledFavoriteIcon"
+          ibmIconFavoriteFilled size="20" title="Number of likes"></svg>
+        <ng-template #unfilledFavoriteIcon>
+          <svg (click)="toggleLikePostBtn()" ibmIconFavorite size="20" title="Number of likes"></svg>
+        </ng-template>
+
         <span *ngIf="post.numOfLikes === 1 else manyLikes">{{post.numOfLikes}} like</span>
         <ng-template #manyLikes>{{post.numOfLikes}} likes</ng-template>
       </div>
@@ -57,17 +75,22 @@
 
     </div>
 
-    <div class="post-page-comment-text-input">
+    <div class="post-page-comment-text-input" [ngSwitch]="isSignedIn()">
       <input
+        *ngSwitchCase=true
+        [value]=""
+        (keydown.enter)="getCommentValue($event.target)"
         ibmText
         size="xl"
         theme="light"
         placeholder="Add a comment..."
-        >
-    </div>
+      >
+      <p *ngSwitchCase=false>
+        <a ibmLink [routerLink]="['/login']">Log in</a> 
+        to like or comment.</p>
+    
+      </div>
     
   </section>
 
 </div>
-
-

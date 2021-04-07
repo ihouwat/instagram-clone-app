@@ -27,7 +27,7 @@ export class UserManagementService {
     return user;
   }
 
-  getAccountOwner():User {
+  getCurrentUser():User {
     return this.sessionService.getSessionInfo();
   }
 
@@ -36,12 +36,49 @@ export class UserManagementService {
     return userObj[0];
   }
 
+  // From settings page
   setUserAccountDetails(fg:FormGroup) {
     console.log(fg.value);
   }
 
+  // From settings page
   setUserPassword(fg:FormGroup) {
     console.log(fg.value);
+  }
+
+  // Add user to 'friends' list
+  followUser(username:string) {
+    console.log(username);
+  }
+
+  // Remove user from 'friends' list
+  unfollowUser(username:string) {
+    console.log(username);
+  }
+
+  // Checks if current user is following another user
+  isFollowingUser(usernameInput:string):boolean {
+    let filterFriendsArray = 
+      this.sessionService
+        .getSessionInfo()
+          .listOfFollowing.filter(user => user.username === usernameInput);
+          
+    /* 
+      If another user is found in the account owner's list of friends
+      findFriendArray.length is larger than 0. Return value below is boolean
+    */
+    return filterFriendsArray.length > 0; 
+  }
+
+  // Add or remove a post id from the current user's likedPosts array
+  toggleUserLikesPost(flag:boolean, postID:number, user = this.getCurrentUser()) {
+    // If flag is true, user previously liked post and will not unlike it
+    if(flag === true) {
+      console.log("User no longer likes this post");
+    }
+    else {
+      console.log("User now likes this post");
+    }
   }
 
   constructor(

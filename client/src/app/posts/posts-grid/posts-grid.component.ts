@@ -14,8 +14,7 @@ export class PostsGridComponent implements OnInit {
   @Input() user!:User;
   posts!:Post[];
 
-  detectRoute() {
-    // let x = this.router.config.filter((route:any) => route.pathMatch('user'));
+  determinePostsByRoute() {
     if (this.router.url.includes('user')){
       this.posts = this.postService.getUserPosts(this.user);
     }
@@ -29,6 +28,8 @@ export class PostsGridComponent implements OnInit {
     private router:Router,
     private postService:PostManagementService) { }
 
-  ngOnInit(): void {this.detectRoute()}
+  ngOnInit(): void {
+    this.determinePostsByRoute()
+  }
 
 }

@@ -8,7 +8,7 @@ import { UserManagementService } from '../../shared/services/user-management.ser
   templateUrl: './news-feed.component.html',
 })
 export class NewsFeedComponent implements OnInit {
-  accountOwner = this.userService.getAccountOwner();
+  currentUser:User = this.userService.getCurrentUser();
 
   constructor(private userService:UserManagementService) { }
 

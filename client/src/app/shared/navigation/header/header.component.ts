@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit():void {
     // Fetch sign in status on log in
-    if (this.signedIn) this.accountOwner = this.userService.getAccountOwner();
+    if (this.signedIn) this.accountOwner = this.userService.getCurrentUser();
   }
 
   // If not signed in, disable search box

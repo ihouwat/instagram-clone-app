@@ -25,7 +25,7 @@ export class SettingsFormService {
 
   // Getter method to populate the account details form
   getAccount():User {
-    return this.userService.getAccountOwner();
+    return this.userService.getCurrentUser();
   }
 
   constructor(private userService:UserManagementService) {}

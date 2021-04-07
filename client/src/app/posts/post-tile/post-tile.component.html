@@ -18,7 +18,9 @@
 </a>
 
 <div class="post-owner" *ngIf="hasNewsFeedRoute()"> 
-  <img [src]="post.owner.imageURL" />
+  <a [routerLink]="['/user', post.owner.username]">
+    <img [src]="post.owner.imageURL" />
+  </a>
   <a ibmLink [inline]=false [routerLink]="['/user', post.owner.username]">{{post.owner.username}}</a>
   <span class="date">{{post.date | timeAgo }}</span>
 </div>

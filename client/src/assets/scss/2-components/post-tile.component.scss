@@ -61,6 +61,10 @@ ibm-tile.post-wrapper {
     color: $text-01;
     align-self: center;
     max-width: max-content;
+    outline: none;
+    &:hover {
+      color: $text-01;
+    }
   }
   span.date {
     grid-column-start: 2;

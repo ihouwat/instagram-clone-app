@@ -14,6 +14,9 @@ export interface User {
   numFollowing:number;
   description:string;
   website:string;
+  listOfFollowing:Array<User>;
+  listOfFollowers:Array<User>;
+  likedPosts: Array<Post>; // Identify by post IDs
 }
 
 //==============================================================================

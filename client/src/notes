@@ -3,6 +3,7 @@ To dos found in:
 - App routing module
   Remove 'user' from Users routing module
 - All form validations
+- Routable modal angular
 - Eventually need http interceptor service for 
   404 routing
   jwt safety

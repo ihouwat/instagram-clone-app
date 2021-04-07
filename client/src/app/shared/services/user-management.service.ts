@@ -48,12 +48,12 @@ export class UserManagementService {
 
   // Add user to 'friends' list
   followUser(username:string) {
-    console.log(username);
+    console.log("follow ", username);
   }
 
   // Remove user from 'friends' list
   unfollowUser(username:string) {
-    console.log(username);
+    console.log("unfollow ", username);
   }
 
   // Checks if current user is following another user

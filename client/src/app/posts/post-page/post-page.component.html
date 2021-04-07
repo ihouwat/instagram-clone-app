@@ -37,14 +37,15 @@
       <li *ngFor="let comment of post.comments">
 
         <div class="post-page-commenter-image">
-          <a  [routerLink]="['/user', comment.sender.username]">
+          <a [routerLink]="['/user', comment.sender.username]">
             <img src="{{comment.sender.imageURL}}" width="32"/>
           </a>
         </div>
 
         <div class="post-page-comment-content">
           <p>
-            <span class="post-comment-sender">@{{comment.sender.username}} </span> 
+            <a ibmLink [routerLink]="['/user', comment.sender.username]" 
+              class="post-comment-sender">@{{comment.sender.username}}</a> 
             {{comment.comment}}
           </p>
           <span class="post-comment-date">{{comment.date | timeAgo}}</span>

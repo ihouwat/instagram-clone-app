@@ -41,7 +41,7 @@ export class PostPageComponent implements OnInit {
     this.userService.unfollowUser(this.post.owner.username);
   }
 
-  // Checks whether account owner is 'friends' with post owner
+  // Checks whether current user is 'friends' with post owner
   followsUser():boolean {
     return this.userService.isFollowingUser(this.post.owner.username);
   }

@@ -7,7 +7,7 @@ import { User } from '../../model/types';
 })
 export class SessionManagementService {
 
-  // * This service is to manage sessions, Redis connection, ??JWT??
+  // * This service is to manage sessions, Web Storage API, Redis connection, ??JWT??
 
   // Stay signed in for dev mode   
   private isSignedIn:boolean = true;

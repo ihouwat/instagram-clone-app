@@ -35,7 +35,7 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
   exports: [
     HeaderComponent,
     FooterComponent,
-    UsersSearchBoxComponent
+    UsersSearchBoxComponent,
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

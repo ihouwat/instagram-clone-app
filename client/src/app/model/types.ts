@@ -45,10 +45,10 @@ export interface Comment {
 }
 
 //==============================================================================
-// Chatroom
+// Chat
 //==============================================================================
 
-export interface Chatroom {
+export interface Chat {
   postId:number;
   participants:Array<User>;
   date:Date;

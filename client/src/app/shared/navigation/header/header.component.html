@@ -3,24 +3,29 @@
 
     <!-- Brand section -->
     <div class="header-brand">
-      <a routerLink="./">
+      <a [routerLink]="['/']">
         <h1>IGstagram</h1>
       </a>
     </div>
 
     <!-- Searchbox component -->
-    <app-users-search-box [signedIn]="signedIn"></app-users-search-box>
+    <div class="header-search-box">
+      <app-users-search-box 
+        [signedIn]="signedIn" 
+        [size]="SEARCHBOXSIZE"
+        [theme]="SEARCHBOXDARK"></app-users-search-box>
+    </div>
 
     <!-- Icons & Sign in/Sign out buttons -->
     <div class="header-icons">
       <ng-container  *ngIf="signedIn else signInButtons">
-        <a routerLink="/home">
+        <a [routerLink]="['home']">
           <svg ibmIconHome size="20"></svg>
         </a>
-        <a routerLink="www.google.com">
+        <a [routerLink]="['messages']">
           <svg ibmIconSendAlt size="20"></svg>
         </a>
-        <a routerLink="www.google.com">
+        <a [routerLink]="['www.google.com']">
           <svg ibmIconAddAlt size="20"></svg>
         </a>
         <button #overflowMenuBtn (click)="toggleProfileMenu()" ibmButton="ghost" size="sm" [iconOnly]=true>
@@ -28,17 +33,17 @@
           <ul #overflowMenu class="header-overflow-menu" *ngIf="isMenuOpen">
             <li [routerLink]="['user', accountOwner.username]">See Profile</li>
             <li [routerLink]="['user', accountOwner.username, 'settings']">Settings</li>
-            <li routerLink="/login" (click)="signOut()">Log Out</li>
+            <li [routerLink]="['login']" (click)="signOut()">Log Out</li>
           </ul>
         </button>
       </ng-container>
     </div>
     
     <ng-template #signInButtons>
-      <button routerLink="login" ibmButton="primary">Log In
+      <button [routerLink]="['login']" ibmButton="primary">Log In
         <svg ibmIconUserAvatar size="20" class="bx--btn__icon"></svg>
       </button>
-      <button routerLink="/login/signup" ibmButton="ghost">Sign Up</button>
+      <button [routerLink]="['login/signup']" ibmButton="ghost">Sign Up</button>
     </ng-template>
   </div>
 

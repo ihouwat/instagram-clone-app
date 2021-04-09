@@ -1,14 +1,16 @@
+Decide whether to separate searchbox in heaader from one in messages services. What is the elegant solution?
+
 To dos found in:
 
-- App routing module
-  Remove 'user' from Users routing module
-- All form validations
-- Routable modal angular
-- Eventually need http interceptor service for 
-  404 routing
-  jwt safety
-  routing to home OR login page
-- Eventually implement proper search box component search
+- App routing module: Remove 'user' from Users routing module
+- Add forms validation
+- Routable modal angular to display individual posts
+- Implement proper search box component UX
+- Build http interceptor service for 
+    404 routing
+    jwt safety
+    Route guards so that you can't access pages without being logged in or the user
+    Routing to home OR login page on entering site, based on login status
 
 - technologies added:
-  ngx-pipes: https://www.npmjs.com/package/ngx-pipes#timeago
+  ngx-pipes: https://www.npmjs.com/package/ngx-pipes#timeagon

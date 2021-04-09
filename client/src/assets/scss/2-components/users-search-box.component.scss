@@ -1,8 +1,17 @@
 // Search box for users
 .users-search-box {
-  flex: 1;
-  max-width: 215px;
-  
+  height: 100%; // to inherit height of surrounding components
+
+  ibm-search.bx--form-item {
+    height: inherit;
+    .bx--search {
+      height: inherit;
+      input.bx--search--xl {
+        height: inherit;
+        min-height: 3rem;
+      }
+    }
+  }
   .search-results-display {
     position: absolute;
     margin-top: 4px;

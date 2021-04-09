@@ -1,0 +1,18 @@
+<div class="messages-container">
+
+  <section class="messages-chat-list">
+    <app-messages-header></app-messages-header>
+    <app-chat-list></app-chat-list>
+  </section>
+
+  <section class="messages-msg-display">
+    <div class="messages-search-box">
+      <app-users-search-box 
+        [signedIn]="signedIn" 
+        [size]="SEARCHBOXSIZE"
+        [theme]="SEARCHBOXLIGHT"></app-users-search-box>
+    </div>
+    <app-message-display></app-message-display>
+  </section>
+
+</div>

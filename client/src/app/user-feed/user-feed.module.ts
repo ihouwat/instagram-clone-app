@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms'
 // import custom components and modules
 import { UserFeedRoutingModule } from './user-feed-routing.module';
 import { SettingsComponent } from './settings/settings.component';
-import { NavigationModule } from '../shared/navigation/navigation.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { PostsModule } from '../posts/posts.module';
@@ -28,7 +27,6 @@ import { ChangePasswordForm } from './settings/change-password-form/change-passw
   imports: [
     CommonModule,
     UserFeedRoutingModule,
-    NavigationModule,
     ButtonModule,
     LinkModule,
     PostsModule,

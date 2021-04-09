@@ -14,6 +14,7 @@ import { PostManagementService } from './shared/services/post-management.service
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { PostsModule } from './posts/posts.module';
 import { NewsFeedModule } from './news-feed/news-feed.module';
+import { MessagesModule } from './messages/messages.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NewsFeedModule } from './news-feed/news-feed.module';
     UserFeedModule,
     PostsModule,  
     NewsFeedModule,
+    MessagesModule
   ],
   providers: [
     SessionManagementService,

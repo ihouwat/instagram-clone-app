@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'user/:username',
     loadChildren: () => import('./user-feed/user-feed-routing.module').then(m => m.UserFeedRoutingModule)
   },
+  { 
+    path: 'messages',
+    loadChildren: () => import('./messages/messages-routing.module').then(m => m.MessagesRoutingModule)
+  },
   { path: 'post/:id', component: PostPageComponent},
   { path: 'home', component: NewsFeedComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },

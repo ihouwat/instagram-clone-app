@@ -8,15 +8,17 @@ import { UserManagementService } from '../../services/user-management.service';
 })
 export class UsersSearchBoxComponent implements OnInit {
 
-  // Inherits from parent components whether user is signed in or not
+  // Inherits login status from parent components
   @Input('signedIn') signedIn!:boolean;
+  @Input('size') size!:any; // get search box size from parent component
+  @Input('theme') theme!:any; // get color theme from parent component
 
-  @ViewChild('searchBox', {read: ElementRef}) searchBox!:ElementRef;
+  @ViewChild('searchBox', {read: ElementRef}) searchBox!:ElementRef; // Searchbox element
   @ViewChild('searchBoxResults') searchBoxResults!:ElementRef; // Drop down list when searching for users
   searchResultsDisp:boolean = false; // Boolean for opening/closing search box
-  searchResultsList:Array<User> = [];
+  searchResultsList:Array<User> = []; // List of search results
 
-  // If not signed in, disable search box
+  // Disable/Enable search box based on login status
   disableSearchBox():boolean {
     return this.signedIn === true ? false : true;
   }
@@ -37,7 +39,7 @@ export class UsersSearchBoxComponent implements OnInit {
     
   }
 
-  // Hide search results and empty search results when closing query
+  // Empty and hide search results list
   clearSearchBox() {
     this.searchResultsDisp = false;
     this.searchResultsList = [];
@@ -50,7 +52,6 @@ export class UsersSearchBoxComponent implements OnInit {
       this.renderer.listen('window', 'click', (e:Event) => {
          // if the mouse click is outside list of search results, close the overflow list
          if(!this.searchBoxResults?.nativeElement.contains(e.target)) {
-          console.log(this.searchBoxResults);
           this.searchResultsDisp = false;
         }
 
@@ -61,7 +62,6 @@ export class UsersSearchBoxComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {console.log(this.size);}
 
 }

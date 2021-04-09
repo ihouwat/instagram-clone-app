@@ -1,0 +1,27 @@
+.messages-container {
+  display: flex;
+  // background: $-white;
+  background: white;
+  // border: 1px solid $ui-03;
+  border: 1px solid #E0E0E0;
+
+  section.messages-chat-list {
+    // TODO make container width fluid
+    width: 320px;
+    // border-right: 1px solid $ui-03;
+    border-right: 1px solid #E0E0E0;
+  }
+
+  section.messages-msg-display {
+    flex-grow: 1;
+    .messages-search-box {
+      height: 3.5rem;
+      // border-bottom: 1px solid $ui-03;
+      border-bottom: 1px solid #E0E0E0;
+      input.bx--search-input {
+        height: inherit;
+      }
+    }
+  }
+
+}

@@ -5,6 +5,7 @@ import { AppRoutingModule } from '../../app-routing.module';
 // import custom components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UsersSearchBoxComponent } from './users-search-box/users-search-box.component';
 
 // import carbon design modules
 import {SearchModule, ButtonModule} from 'carbon-components-angular';
@@ -15,7 +16,8 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UsersSearchBoxComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UsersSearchBoxComponent
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

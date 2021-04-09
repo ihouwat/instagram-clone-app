@@ -1,44 +1,17 @@
 <nav class="header-wrapper">
   <div class="header-container">
 
+    <!-- Brand section -->
     <div class="header-brand">
       <a routerLink="./">
         <h1>IGstagram</h1>
       </a>
     </div>
-    
-    <div class="header-search">
-      <ibm-search
-        #searchBox
-        theme="dark"
-        [placeholder]=""
-        [disabled]="disableSearchBox()"
-        size="sm"
-        (valueChange)="searchBoxValueChange($event)"
-        (clear) = "clearSearchBox()"
-        >
-      </ibm-search>
-      
-      <ul class="search-results-display" *ngIf="searchResultsDisp">
 
-        <ng-container *ngIf="searchResults.length > 0 else emptySearch">
-          <li *ngFor="let result of searchResults" >
-            <a [routerLink]="['user', result.username]">
-              <img [src]="result.imageURL" width="40" />
-              <span>{{result.username}}</span>
-              <span>{{result.fullName}}</span>
-            </a>
-          </li>
-        </ng-container>
+    <!-- Searchbox component -->
+    <app-users-search-box [signedIn]="signedIn"></app-users-search-box>
 
-        <ng-template #emptySearch>
-          <li>Nothing</li>
-        </ng-template>
-        
-      </ul>
-
-    </div>
-
+    <!-- Icons & Sign in/Sign out buttons -->
     <div class="header-icons">
       <ng-container  *ngIf="signedIn else signInButtons">
         <a routerLink="/home">

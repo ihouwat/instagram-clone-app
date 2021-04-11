@@ -15,9 +15,6 @@ export class HeaderComponent implements OnInit {
   
   accountOwner!:User;
   signedIn:boolean = this.sessionService.getSignInStatus();
-  
-  SEARCHBOXSIZE:any = "sm"; // passes size attr to child search box component
-  SEARCHBOXDARK:any = "dark"; // passes color theme attr to child search box component
 
   // Toggles overflow profile menu
   toggleProfileMenu() {

@@ -32,7 +32,7 @@ export class UserManagementService {
   }
 
   findSingleUserByUsername(username:string) {
-    let userObj = USERS.filter((u:User) => u.username === username);
+    let userObj = USERS.filter((u:User) => u.username.toLowerCase() === username.toLowerCase());
     return userObj[0];
   }
 

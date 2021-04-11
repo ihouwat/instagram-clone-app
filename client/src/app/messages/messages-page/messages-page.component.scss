@@ -5,7 +5,11 @@
   // border: 1px solid $ui-03;
   border: 1px solid #E0E0E0;
 
-  section.messages-chat-list {
+  section {
+    height: 530px;
+  }
+
+  section.messages-chat-list-column {
     // TODO make container width fluid
     width: 320px;
     // border-right: 1px solid $ui-03;

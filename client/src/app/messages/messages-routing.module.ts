@@ -7,6 +7,10 @@ const routes:Routes = [
     path: '',
     component: MessagesPageComponent
   },
+  {
+    path: ':id',
+    component: MessagesPageComponent
+  }
 ]
 
 @NgModule({

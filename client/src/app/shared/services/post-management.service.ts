@@ -11,7 +11,7 @@ import { UserManagementService } from './user-management.service';
 export class PostManagementService {
   
   getUserPosts(user:User):Post[] {
-    let userPosts = POSTS.filter((p:any) => p.owner.username === user.username);
+    let userPosts = POSTS.filter((p:any) => p.owner.username.toLowerCase() === user.username.toLowerCase());
     return userPosts;
   }
 

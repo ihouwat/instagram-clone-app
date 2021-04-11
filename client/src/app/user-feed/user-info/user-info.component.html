@@ -8,8 +8,8 @@
     <h2>{{user.username}}</h2>
     <ng-container [ngSwitch]="displayUserButton()">
       <button (click)="editProfileBtn()" *ngSwitchCase="'CURRENT_USER'" ibmButton="tertiary" size="sm">Edit Profile</button>
-      <button (click)="followUserBtn()" *ngSwitchCase="'UNFOLLOW_BTN'" ibmButton="tertiary" size="sm">Unfollow</button>
-      <button (click)="unfollowUserBtn()" *ngSwitchCase="'FOLLOW_BTN'" ibmButton="tertiary" size="sm">Follow</button>
+      <button (click)="unfollowUserBtn()" *ngSwitchCase="'UNFOLLOW_BTN'" ibmButton="tertiary" size="sm">Unfollow</button>
+      <button (click)="followUserBtn()" *ngSwitchCase="'FOLLOW_BTN'" ibmButton="tertiary" size="sm">Follow</button>
     </ng-container>
   </div>
 

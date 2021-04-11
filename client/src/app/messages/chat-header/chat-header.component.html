@@ -1,0 +1,22 @@
+<div class="chat-header" [ngSwitch]="getChatHeaderDisp">
+
+    <ng-container *ngSwitchCase="'DisplaySearch'">
+      <p>To:</p>
+      
+      <input
+        focusInput
+        class="msg-search-text-area"
+        [value]=""
+        ibmText
+        size="xl"
+        theme="light"
+        placeholder=""
+      >
+    </ng-container>
+  
+    <ng-container *ngSwitchCase="'DisplayUser'">
+      <img [src]="user.imageURL" width="32" />
+      <p class="username">{{user.username}}</p>
+    </ng-container>
+
+  </div>

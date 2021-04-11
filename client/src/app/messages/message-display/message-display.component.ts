@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-message-display',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageDisplayComponent implements OnInit {
 
-  constructor() { }
+  messageSelected!:boolean;
+
+  startChat() {
+    this.msgService.startNewChat();
+  }
+
+  constructor(private msgService:MessageService) { }
 
   ngOnInit(): void {
+    this.messageSelected = false;
   }
 
 }

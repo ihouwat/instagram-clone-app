@@ -10,8 +10,6 @@ export class UsersSearchBoxComponent implements OnInit {
 
   // Inherits login status from parent components
   @Input('signedIn') signedIn!:boolean;
-  @Input('size') size!:any; // get search box size from parent component
-  @Input('theme') theme!:any; // get color theme from parent component
 
   @ViewChild('searchBox', {read: ElementRef}) searchBox!:ElementRef; // Searchbox element
   @ViewChild('searchBoxResults') searchBoxResults!:ElementRef; // Drop down list when searching for users
@@ -50,8 +48,9 @@ export class UsersSearchBoxComponent implements OnInit {
     private renderer:Renderer2) { 
       // Detects mouse click events
       this.renderer.listen('window', 'click', (e:Event) => {
-         // if the mouse click is outside list of search results, close the overflow list
-         if(!this.searchBoxResults?.nativeElement.contains(e.target)) {
+         // if the mouse click is inside OR outside list of search results, close the overflow list
+         if(!this.searchBoxResults?.nativeElement.contains(e.target)
+            || this.searchBoxResults?.nativeElement.contains(e.target)) {
           this.searchResultsDisp = false;
         }
 
@@ -62,6 +61,6 @@ export class UsersSearchBoxComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {console.log(this.size);}
+  ngOnInit(): void {}
 
 }

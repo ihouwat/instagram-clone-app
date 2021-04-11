@@ -1,1 +1,22 @@
-<p>chat-list works!</p>
+<ul class="messages-chat-list">
+
+  <li class="chat-item" *ngFor="let chat of chatList"> 
+
+    <a [routerLink]="['/messages', chat.id]">
+
+      <ng-container *ngFor="let p of chat.participants">
+        <img *ngIf="p.imageURL" [src]="p.imageURL" width="50"/>
+        <span>
+          {{p.username}}
+        </span>
+  
+      </ng-container>
+      
+      <span>{{chat.date | timeAgo}}</span>
+
+    </a>
+
+  </li>
+
+</ul> 
+

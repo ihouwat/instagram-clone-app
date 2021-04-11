@@ -1,4 +1,7 @@
-Decide whether to separate searchbox in heaader from one in messages services. What is the elegant solution?
+Search box in messages automatically opens the results overflow menu
+Style chat list
+Implement activated route to read individual messages
+Create component on user page if user has no posts yet
 
 To dos found in:
 

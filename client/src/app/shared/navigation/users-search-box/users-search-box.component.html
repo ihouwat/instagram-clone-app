@@ -1,10 +1,10 @@
 <div class="users-search-box">
   <ibm-search
     #searchBox
-    [theme]="theme"
+    theme="dark"
     [placeholder]=""
     [disabled]="disableSearchBox()"
-    [size]="size"
+    size="sm"
     (valueChange)="searchBoxValueChange($event)"
     (clear) = "clearSearchBox()"
     >

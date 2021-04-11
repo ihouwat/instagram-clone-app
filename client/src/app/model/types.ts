@@ -49,7 +49,7 @@ export interface Comment {
 //==============================================================================
 
 export interface Chat {
-  postId:number;
+  id:number;
   participants:Array<User>;
   date:Date;
 }
@@ -59,7 +59,7 @@ export interface Chat {
 //==============================================================================
 
 export interface Message {
-  id:number; // Matches the chatroom id
+  chatId:number; // Matches the chatroom id
   sender: User;
   date: Date;
 }

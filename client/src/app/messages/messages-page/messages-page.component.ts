@@ -8,9 +8,7 @@ import { SessionManagementService } from 'src/app/shared/services/session-manage
 })
 export class MessagesPageComponent implements OnInit {
 
-  signedIn!:boolean; 
-  SEARCHBOXSIZE:any = "xl"; // passes size attr to child search box component
-  SEARCHBOXLIGHT:any = "light"; // passes color theme attr to child search box component
+  signedIn!:boolean;
 
   constructor(private sessionService:SessionManagementService) { }
 

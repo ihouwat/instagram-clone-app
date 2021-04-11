@@ -9,12 +9,7 @@
     </div>
 
     <!-- Searchbox component -->
-    <div class="header-search-box">
-      <app-users-search-box 
-        [signedIn]="signedIn" 
-        [size]="SEARCHBOXSIZE"
-        [theme]="SEARCHBOXDARK"></app-users-search-box>
-    </div>
+    <app-users-search-box [signedIn]="signedIn"></app-users-search-box>
 
     <!-- Icons & Sign in/Sign out buttons -->
     <div class="header-icons">

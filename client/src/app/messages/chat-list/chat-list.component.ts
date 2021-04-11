@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MessageService } from '../message.service';
+import { Chat, User } from '../../model/types';
+
+
 @Component({
   selector: 'app-chat-list',
   templateUrl: './chat-list.component.html',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatListComponent implements OnInit {
 
-  constructor() { }
+  chatList!:Array<Chat>;
+
+  constructor(private msgService:MessageService) { }
 
   ngOnInit(): void {
+    this.chatList = this.msgService.getChatList();
   }
 
 }

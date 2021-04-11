@@ -1,1 +1,12 @@
-<p>message-display works!</p>
+<div class="message-display-container" *ngIf="messageSelected else noMessageSelected">
+  <p>message</p>
+</div>
+
+<ng-template #noMessageSelected>
+  <div class="no-msg-selected">
+    <img src="../../../assets/images/send--alt.svg" width="100"/>
+    <h2>Your Messages</h2>
+    <p>Send private messages to a friend.</p>
+    <button (click)="startChat()" ibmButton="primary">Send Message</button>
+  </div>
+</ng-template>

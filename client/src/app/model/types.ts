@@ -25,7 +25,7 @@ export interface User {
 
 export interface Post {
   id:number;
-  owner: User;
+  owner:User;
   imageURL:string;
   numOfLikes:number;
   numOfComments:number;
@@ -51,6 +51,7 @@ export interface Comment {
 export interface Chat {
   id:number;
   participants:Array<User>;
+  unreadMessages:boolean;
   date:Date;
 }
 
@@ -60,6 +61,7 @@ export interface Chat {
 
 export interface Message {
   chatId:number; // Matches the chatroom id
-  sender: User;
-  date: Date;
+  sender:User;
+  msgRead:boolean;
+  date:Date;
 }

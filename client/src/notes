@@ -1,5 +1,8 @@
-Search box in messages automatically opens the results overflow menu
-Style chat list
+Implement search service to share with user and message searches
+Make user search results component routing dynamic, depending on which component it lives in
+Search box clear() does not close results list
+change mouse listener on results to ibm-overflow-menu-option ElementRef
+
 Implement activated route to read individual messages
 Create component on user page if user has no posts yet
 

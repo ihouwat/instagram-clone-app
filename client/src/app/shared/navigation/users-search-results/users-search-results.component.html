@@ -1,0 +1,15 @@
+<ul role="listbox" #searchBoxResults class="search-results-display" *ngIf="searchResultsDisp">
+
+  <ng-container *ngIf="searchResultsList.length > 0 else emptySearch">
+    <ibm-overflow-menu-option [routerLink]="['user', result.username]" role="option" *ngFor="let result of searchResultsList" class="search-result-list-item">
+      <img [src]="result.imageURL" width="40" />
+      <span>@{{result.username}}</span>
+      <span>{{result.fullName}}</span>
+    </ibm-overflow-menu-option>
+  </ng-container>
+
+  <ng-template #emptySearch>
+    <li class="search-result-empty">No results found.</li>
+  </ng-template>
+
+</ul>

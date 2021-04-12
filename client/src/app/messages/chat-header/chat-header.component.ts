@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/model/types';
 
 import { USERS } from '../../../mock/userDB'
@@ -13,7 +13,9 @@ export class ChatHeaderComponent implements OnInit {
 
   // user comes as input - try mock
   user:User = USERS[0];
-
+  users:Array<User> = USERS;
+  searchResultsDisp = true;
+  
   // Msg service observable determines whether to display the search input or a user
   get getChatHeaderDisp():string {
     return this.msgService.chatHeader;

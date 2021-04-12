@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Custom components and services
@@ -11,9 +11,10 @@ import { ChatHeaderComponent } from './chat-header/chat-header.component';
 import { MessageDisplayComponent } from './message-display/message-display.component';
 import { DirectivesModule } from '../shared/directives/directives.module'
 import { NgPipesModule } from 'ngx-pipes';
+import { NavigationModule } from '../shared/navigation/navigation.module';
 
 // carbon design components
-import { ButtonModule, InputModule } from 'carbon-components-angular';
+import { ButtonModule, InputModule, TilesModule, ComboBoxModule } from 'carbon-components-angular';
 import { EditModule } from '@carbon/icons-angular';
 
 
@@ -32,8 +33,12 @@ import { EditModule } from '@carbon/icons-angular';
     InputModule,
     DirectivesModule,
     NgPipesModule,
-    MessagesRoutingModule
+    MessagesRoutingModule,
+    TilesModule,
+    ComboBoxModule,
+    NavigationModule
   ],
-  providers: [MessageService]
+  providers: [MessageService],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class MessagesModule { }

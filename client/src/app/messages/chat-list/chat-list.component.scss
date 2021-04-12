@@ -12,15 +12,54 @@
   }
 
   .chat-item {
-    &:hover {
-      background-color: red;
+    padding: 0;
+    &:hover, &:focus {
+      background-color: #e5e5e5;
+      // background-color: $hover-ui;
     }
     a {
-      display: block;
-      padding: 8px 28px;
+      display: grid;
+      padding: 12px 24px;
+      grid-template-columns: 56px 1fr auto;
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 12px;
+      grid-row-gap: 4px;
+      text-decoration: none;
+      // @include carbon--type-style("helper-text-01");
+      // font-size: 12px;
+    }
+    .unread-message {
+      // color: $text-01;
+      color: #161616;
+      font-weight: 700;
+    }
+    .read-message {
+      // color: $text-03;
+      color: #a8a8a8;
     }
     img {
       border-radius: 50%;
+      grid-column-start: 1;
+      grid-row: 1/-1;
+    }
+    .chat-username {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      align-self: end;
+    }
+    .chat-snippet {
+      grid-column-start: 2;
+      grid-row-start: 2;
+      align-self: start;
     }
   }
+  
+  .current-chat-selected {
+    // background-color: $hover-selected-ui;
+    background-color: #cacaca;
+    &:hover {
+      background-color: #cacaca;  
+    }
+  }
+
 }

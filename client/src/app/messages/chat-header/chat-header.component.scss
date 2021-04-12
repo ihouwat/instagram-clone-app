@@ -24,6 +24,15 @@
     margin-left: 16px;
   }
 
+  .msg-search-results {
+    position: absolute;
+    // background-color: $white-0;
+    background-color: red;
+    height: 200px;
+    width: 30%;
+    transform: translate(10px, 220px);
+  }
+
   .username {
     font-weight: 700;
     // @include carbon--type-style("productive-heading-02");

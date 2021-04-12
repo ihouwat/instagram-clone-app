@@ -6,26 +6,12 @@
     [disabled]="disableSearchBox()"
     size="sm"
     (valueChange)="searchBoxValueChange($event)"
-    (clear) = "clearSearchBox()"
+    (clear)="clearSearchBox()"
     >
   </ibm-search>
   
-  <ul #searchBoxResults class="search-results-display" *ngIf="searchResultsDisp">
-
-    <ng-container *ngIf="searchResultsList.length > 0 else emptySearch">
-      <li *ngFor="let result of searchResultsList" class="search-result-list-item">
-        <a [routerLink]="['user', result.username]">
-          <img [src]="result.imageURL" width="40" />
-          <span>@{{result.username}}</span>
-          <span>{{result.fullName}}</span>
-        </a>
-      </li>
-    </ng-container>
-
-    <ng-template #emptySearch>
-      <li class="search-result-empty">No results found.</li>
-    </ng-template>
-    
-  </ul>
+  <app-users-search-results 
+    [searchResultsList]="searchResultsList" 
+    [searchResultsDisp]="searchResultsDisp"></app-users-search-results>
 
 </div>

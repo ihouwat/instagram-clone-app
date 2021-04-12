@@ -23,7 +23,11 @@ export class UsersSearchBoxComponent implements OnInit {
 
   // Display search results when typing query in search box
   searchBoxValueChange(input:string) {
-    this.searchResultsList = this.userService.searchForUsers(input);
+    
+    // Only refresh input list when 
+    if(input.length > 0) {
+      this.searchResultsList = this.userService.searchForUsers(input);
+    }
     
     // Start displaying results once user has typed at least three characters
     if(input.length >= 3) {
@@ -37,10 +41,8 @@ export class UsersSearchBoxComponent implements OnInit {
     
   }
 
-  // Empty and hide search results list
   clearSearchBox() {
     this.searchResultsDisp = false;
-    this.searchResultsList = [];
   }
 
   constructor(

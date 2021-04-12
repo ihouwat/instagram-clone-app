@@ -8,6 +8,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/1d92193f8a7a5f0091d8301d.jpeg?width=256',
       }
     ],
+    unreadMessages: true,
     date:new Date()
   },
   {
@@ -19,6 +20,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/c36be2df0f1778a8fdd6b03f.jpeg?width=256',
       }
     ],
+    unreadMessages: true,
     date:new Date()
   },
   {
@@ -30,6 +32,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/793b61e4f31aaf763fd3a8cc.jpeg',
       }
     ],
+    unreadMessages: false,
     date:new Date()
   },
   {
@@ -41,6 +44,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/793b61e4f31aaf763fd3a8cc.jpeg?width=256',      
       }
     ],
+    unreadMessages: true,
     date:new Date()
   },
   {
@@ -52,6 +56,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/1d92193f8a7a5f0091d8301d.jpeg?width=256'
       }
     ],
+    unreadMessages: true,
     date:new Date()
   },
   {
@@ -63,6 +68,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/1d92193f8a7a5f0091d8301d.jpeg?width=256',
       }
     ],
+    unreadMessages: false,
     date:new Date()
   },
   {
@@ -74,6 +80,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/c36be2df0f1778a8fdd6b03f.jpeg?width=256',
       }
     ],
+    unreadMessages: true,
     date:new Date()
   },
   {
@@ -85,6 +92,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/793b61e4f31aaf763fd3a8cc.jpeg',
       }
     ],
+    unreadMessages: true,
     date:new Date()
   },
   {
@@ -96,6 +104,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/793b61e4f31aaf763fd3a8cc.jpeg?width=256',      
       }
     ],
+    unreadMessages: false,
     date:new Date()
   },
   {
@@ -107,6 +116,7 @@ export const CHATLIST:any = [
         imageURL: 'https://artbreeder.b-cdn.net/imgs/1d92193f8a7a5f0091d8301d.jpeg?width=256'
       }
     ],
+    unreadMessages: false,
     date:new Date()
   },
 ]

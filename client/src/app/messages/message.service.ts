@@ -59,6 +59,21 @@ export class MessageService {
     return this.chatList;
   }
 
+  openChat(chat:Chat) {
+    // Fetch list of messages here
+
+    this.markMessagesRead(chat);
+  }
+
+  // Helper method to mark all messages in a chat as read
+  markMessagesRead(chat:Chat) {
+    chat.unreadMessages = false;
+  }
+
+  // Helper method to mark all messages in a chat as unread
+  markMessagesUnread(chat:Chat) {
+    chat.unreadMessages = true;
+  }
   
   constructor(private userService:UserManagementService) { 
 

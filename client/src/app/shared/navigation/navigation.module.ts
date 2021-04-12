@@ -8,16 +8,18 @@ import { FooterComponent } from './footer/footer.component';
 import { UsersSearchBoxComponent } from './users-search-box/users-search-box.component';
 
 // import carbon design modules
-import {SearchModule, ButtonModule} from 'carbon-components-angular';
+import {SearchModule, ButtonModule, DialogModule} from 'carbon-components-angular';
 import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule, 
   LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';
+import { UsersSearchResultsComponent } from './users-search-results/users-search-results.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    UsersSearchBoxComponent
+    UsersSearchBoxComponent,
+    UsersSearchResultsComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
     LogoGithubModule,
     LogoTwitterModule,
     LogoLinkedinModule,
+    DialogModule,
   ],
   exports: [
     HeaderComponent,

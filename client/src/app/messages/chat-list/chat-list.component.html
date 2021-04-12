@@ -1,22 +1,32 @@
 <ul class="messages-chat-list">
 
-  <li class="chat-item" *ngFor="let chat of chatList"> 
+  <ibm-tile 
+    theme="light"
+    *ngFor="let chat of chatList; let i = index" 
+    [ngClass]="setChatItemStyles(i)" 
+    (click)="openChat(chat)">
 
-    <a [routerLink]="['/messages', chat.id]">
+    <a [routerLink]="['/messages', chat.id]" [ngClass]="checkForUnreadMsgs(chat)">
 
       <ng-container *ngFor="let p of chat.participants">
-        <img *ngIf="p.imageURL" [src]="p.imageURL" width="50"/>
-        <span>
+        
+        <img *ngIf="p.imageURL" [src]="p.imageURL" width="56"/>
+
+        <span class="chat-username">
+          
           {{p.username}}
+        
         </span>
   
       </ng-container>
       
-      <span>{{chat.date | timeAgo}}</span>
+      <span class="chat-snippet">
+        Message content • {{chat.date | timeAgo}}
+      </span>
 
     </a>
 
-  </li>
+  </ibm-tile>
 
 </ul> 
 

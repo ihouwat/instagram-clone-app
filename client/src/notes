@@ -1,7 +1,6 @@
-Implement search service to share with user and message searches
+Implement search service to control user and message search (perhaps observable pattern??)
+  Search box clear() does not close results list
 Make user search results component routing dynamic, depending on which component it lives in
-Search box clear() does not close results list
-change mouse listener on results to ibm-overflow-menu-option ElementRef
 
 Implement activated route to read individual messages
 Create component on user page if user has no posts yet

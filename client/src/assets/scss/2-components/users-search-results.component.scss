@@ -2,7 +2,6 @@
   position: absolute;
   margin-top: 4px;
   width: 350px;
-  margin-left: -63px;
   height: 400px;
   z-index: 100;
   overflow-y: scroll;
@@ -54,5 +53,16 @@
     width: 100%;
     height: 100%;
     color: $text-03;
+  }
+
+  // Placement stylings for search results in header component
+  &.header-location {
+    margin-left: -63px;
+  }
+
+  // Placement stylings for search results in messages component
+  &.messages-location {
+    left: 44px;
+    top: 44px;
   }
 }

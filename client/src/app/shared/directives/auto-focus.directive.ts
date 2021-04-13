@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit } from '@angular/core'
+import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core'
 
 @Directive({
   selector: "[focusInput]"
@@ -12,11 +12,13 @@ import { Directive, ElementRef, OnInit } from '@angular/core'
 export class AutoFocusDirective implements OnInit {
   private inputElement: HTMLElement;
 
-  constructor(private elementRef: ElementRef) {
+  constructor(
+    private elementRef: ElementRef,
+    private renderer: Renderer2) {
     this.inputElement = this.elementRef.nativeElement;
   }
 
   ngOnInit(): void {
-    this.inputElement.focus();
+    this.renderer.selectRootElement(this.inputElement).focus();
   }
 }

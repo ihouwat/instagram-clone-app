@@ -14,7 +14,6 @@ export class ChatHeaderComponent implements OnInit {
   // user comes as input - try mock
   user:User = USERS[0];
   users:Array<User> = USERS;
-  searchResultsDisp = true;
   
   // Msg service observable determines whether to display the search input or a user
   get getChatHeaderDisp():string {

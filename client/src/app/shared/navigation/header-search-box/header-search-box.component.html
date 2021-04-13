@@ -1,0 +1,17 @@
+<div class="users-search-box">
+
+  <ibm-search
+    #searchBox
+    theme="dark"
+    [placeholder]=""
+    [disabled]="disableSearchBox()"
+    size="sm"
+    (valueChange)="valueChange($event)"
+    (clear)="clear()"
+    >
+  </ibm-search>
+  
+
+  <app-user-search-results location="header"></app-user-search-results>
+
+</div>

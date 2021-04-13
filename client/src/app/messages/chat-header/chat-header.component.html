@@ -3,7 +3,7 @@
     <ng-container *ngSwitchCase="'DisplaySearch'">
       <p>To:</p>
 
-      <input
+      <input 
         focusInput
         class="msg-search-text-area"
         [value]=""
@@ -13,32 +13,11 @@
         placeholder=""
       > 
       
-      <ul #searchBoxResults class="msg-search-results">
-
-        <ng-container >
-          <li  class="search-result-list-item">
-            <a [routerLink]="['messages']">
-              <img [src]="" width="40" />
-              <span>@name</span>
-              <span>fullName</span>
-            </a>
-          </li>
-        </ng-container>
-    
-        <ng-template #emptySearch>
-          <li class="search-result-empty">No results found.</li>
-        </ng-template>
-        
-      </ul>
-  
-      <app-users-search-results 
-        [searchResultsDisp]="searchResultsDisp" 
-        [searchResultsList]="this.users"></app-users-search-results>
-
+    <app-user-search-results 
+      location="messages"
+      [searchResultsList]="this.users"></app-user-search-results>
     </ng-container>
     
-
-
     <ng-container *ngSwitchCase="'DisplayUser'">
       <img [src]="user.imageURL" width="32" />
       <p class="username">{{user.username}}</p>

@@ -5,21 +5,24 @@ import { AppRoutingModule } from '../../app-routing.module';
 // import custom components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { UsersSearchBoxComponent } from './users-search-box/users-search-box.component';
+import { HeaderSearchBoxComponent } from './header-search-box/header-search-box.component';
+import { SearchResultsAttributeDirective } from './search-results-attr.directive';
+import { UserSearchResultsComponent } from './user-search-results/user-search-results.component';
+import { UserSearchService } from './user-search.service';
 
 // import carbon design modules
 import {SearchModule, ButtonModule, DialogModule} from 'carbon-components-angular';
 import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule, 
   LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';
-import { UsersSearchResultsComponent } from './users-search-results/users-search-results.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    UsersSearchBoxComponent,
-    UsersSearchResultsComponent
+    HeaderSearchBoxComponent,
+    UserSearchResultsComponent,
+    SearchResultsAttributeDirective,
   ],
   imports: [
     CommonModule,
@@ -38,8 +41,11 @@ import { UsersSearchResultsComponent } from './users-search-results/users-search
   exports: [
     HeaderComponent,
     FooterComponent,
-    UsersSearchBoxComponent,
+    HeaderSearchBoxComponent,
+    UserSearchResultsComponent,
+    SearchResultsAttributeDirective
   ],
+  providers: [UserSearchService],
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class NavigationModule { }

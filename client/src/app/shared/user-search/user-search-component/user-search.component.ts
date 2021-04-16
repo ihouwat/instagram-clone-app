@@ -16,7 +16,7 @@ export class UserSearchComponent<T> implements AfterViewInit{
   */
   @Input("location") location!:string; 
   @Input("inputBoxTemplate")
-  inputBoxTemplateRef!: TemplateRef<any>;
+  inputBoxTemplateRef!: TemplateRef<T>;
 
   @ViewChild("searchInput", {read: ElementRef}) searchInput!:ElementRef;
 

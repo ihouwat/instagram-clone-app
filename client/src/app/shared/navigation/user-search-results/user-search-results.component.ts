@@ -36,7 +36,7 @@ export class UserSearchResultsComponent implements OnInit {
       // if the mouse click is inside OR outside list of search results, close the overflow list
       if(!this.searchBoxResults?.nativeElement.contains(e.target)
         || this.searchResultOption?.nativeElement.contains(e.target)) {
-          this.searchResultsDisp = this.usrSearchService.closeSearchResults();
+          // this.searchResultsDisp = this.usrSearchService.closeSearchResults();
       }
     })
   }

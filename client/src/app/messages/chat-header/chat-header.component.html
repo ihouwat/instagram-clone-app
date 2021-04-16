@@ -1,21 +1,25 @@
 <div class="chat-header" [ngSwitch]="getChatHeaderDisp">
 
     <ng-container *ngSwitchCase="'DisplaySearch'">
-      <p>To:</p>
 
-      <input 
-        focusInput
-        class="msg-search-text-area"
-        [value]=""
-        ibmText
-        size="xl"
-        theme="light"
-        placeholder=""
-      > 
+      <ng-template #inputBoxTemplate>
+        <p>To:</p>
+  
+        <input 
+          focusInput
+          class="msg-search-text-area"
+          [value]=""
+          ibmText
+          size="xl"
+          theme="light"
+          placeholder=""
+        > 
       
-    <app-user-search-results 
-      location="messages"
-      [searchResultsList]="this.users"></app-user-search-results>
+    </ng-template>
+    <app-user-search-results-2 
+      [inputBoxTemplate]="inputBoxTemplate"
+      [location]="'messages'"></app-user-search-results-2>
+
     </ng-container>
     
     <ng-container *ngSwitchCase="'DisplayUser'">

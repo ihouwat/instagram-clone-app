@@ -4,6 +4,7 @@ import { UserSearchService } from '../user-search.service';
 @Component({
   selector: 'app-header-search-box',
   templateUrl: './header-search-box.component.html',
+  providers: [UserSearchService]
 })
 export class HeaderSearchBoxComponent implements OnInit {
 

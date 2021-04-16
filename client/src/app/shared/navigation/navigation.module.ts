@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderSearchBoxComponent } from './header-search-box/header-search-box.component';
 import { SearchResultsAttributeDirective } from './search-results-attr.directive';
 import { UserSearchResultsComponent } from './user-search-results/user-search-results.component';
+import { UserSearchResultsComponent2 } from './user-search-results-2/user-search-results.component-2';
 import { UserSearchService } from './user-search.service';
 
 // import carbon design modules
@@ -23,6 +24,7 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
     HeaderSearchBoxComponent,
     UserSearchResultsComponent,
     SearchResultsAttributeDirective,
+    UserSearchResultsComponent2
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
     FooterComponent,
     HeaderSearchBoxComponent,
     UserSearchResultsComponent,
-    SearchResultsAttributeDirective
+    SearchResultsAttributeDirective,
+    UserSearchResultsComponent2
   ],
   providers: [UserSearchService],
   schemas: [NO_ERRORS_SCHEMA]

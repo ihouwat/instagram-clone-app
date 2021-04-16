@@ -14,7 +14,7 @@ import { NgPipesModule } from 'ngx-pipes';
 import { NavigationModule } from '../shared/navigation/navigation.module';
 
 // carbon design components
-import { ButtonModule, InputModule, TilesModule, ComboBoxModule } from 'carbon-components-angular';
+import { ButtonModule, InputModule, TilesModule, ComboBoxModule, SearchModule } from 'carbon-components-angular';
 import { EditModule } from '@carbon/icons-angular';
 
 
@@ -36,7 +36,8 @@ import { EditModule } from '@carbon/icons-angular';
     MessagesRoutingModule,
     TilesModule,
     ComboBoxModule,
-    NavigationModule
+    NavigationModule,
+    SearchModule
   ],
   providers: [MessageService],
   schemas: [NO_ERRORS_SCHEMA]

@@ -1,7 +1,7 @@
-Implement search service to control user and message search (perhaps observable pattern??)
-  Search box clear() does not close results list
+Fix bugginess of opening and closing search boxes
+fix CSS
+Document templates to indicate that they are coming from a ngTemplateOutlet
 Make user search results component routing dynamic, depending on which component it lives in
-
 Implement activated route to read individual messages
 Create component on user page if user has no posts yet
 

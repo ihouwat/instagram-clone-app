@@ -1,17 +1,21 @@
 <div class="users-search-box">
 
-  <ibm-search
-    #searchBox
-    theme="dark"
-    [placeholder]=""
-    [disabled]="disableSearchBox()"
-    size="sm"
-    (valueChange)="valueChange($event)"
-    (clear)="clear()"
-    >
-  </ibm-search>
-  
+  <ng-template #inputBoxTemplate>
+    <ibm-search
+      #searchBox
+      theme="dark"
+      [placeholder]=""
+      [disabled]="disableSearchBox()"
+      size="sm"
+      (valueChange)="valueChange($event)"
+      (clear)="clear()"
+      >
+    </ibm-search>
+  </ng-template>
 
-  <app-user-search-results location="header"></app-user-search-results>
+  
+  <app-user-search-results-2 
+    [inputBoxTemplate]="inputBoxTemplate"
+    [location]="'header'"></app-user-search-results-2>
 
 </div>

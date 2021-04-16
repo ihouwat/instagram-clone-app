@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
 import { UserManagementService } from '../services/user-management.service';
 import { User } from '../../model/types';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserSearchService {
 
-  public searchResultsDisp:boolean = false; // Boolean for opening/closing search box
+  public searchResultsDisp!:boolean; // Boolean for opening/closing search box
+
+  // Observable to determine whether ChatHeaderComponent displays input search or user
+  searchResultsDisplaySubject: Subject<boolean> = new Subject<boolean>(); // Boolean for opening/closing search box
+
   public searchResultsList:Array<User> = []; // List of search results
+
+  searchResultsListSubject: Subject<any> = new Subject<any>();
 
   // Display search results when typing query in search box
   searchForUser(input:string) {
-    
+
     // Only refresh input list when 
     if(input.length > 0) {
-      this.searchResultsList = this.userService.searchForUsers(input);
+      this.searchResultsListSubject.next(this.userService.searchForUsers(input))
     }
     
     // Start displaying results once user has typed at least three characters
@@ -30,12 +37,12 @@ export class UserSearchService {
     
   }
 
-  closeSearchResults():boolean {
-    return this.searchResultsDisp = false;
+  closeSearchResults() {
+    this.searchResultsDisplaySubject.next(false);
   }
 
-  openSearchResults():boolean {
-    return this.searchResultsDisp = true;
+  openSearchResults() {
+    this.searchResultsDisplaySubject.next(true);
   }
 
   get searchResultsListLength():number {
@@ -50,5 +57,14 @@ export class UserSearchService {
     return this.searchResultsDisp;
   }
 
-  constructor(private userService:UserManagementService) {}
+  constructor(private userService:UserManagementService) {
+    // Subscribe to the observable 
+    this.searchResultsDisplaySubject.subscribe((value) =>
+      {next: (this.searchResultsDisp = value)}
+    )
+
+    this.searchResultsListSubject.subscribe((value) =>
+      {next: (this.searchResultsList = value)}
+    )
+  }
 }

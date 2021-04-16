@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/types';
-import { UserSearchService } from 'src/app/shared/navigation/user-search.service';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
-import { USERS } from '../../../mock/userDB'
+import { UserSearchService } from '../../shared/user-search/user-search.service';
 import { MessageService } from '../message.service';
 
 @Component({
@@ -11,36 +9,40 @@ import { MessageService } from '../message.service';
   styleUrls: ['./chat-header.component.scss'],
   providers: [UserSearchService]
 })
-export class ChatHeaderComponent implements OnInit {
+export class ChatHeaderComponent implements AfterViewInit {
 
-  // user comes as input - try mock
-  user:User = USERS[0];
-  users:Array<User> = USERS;
+  @ViewChild("searchInput", {read: ElementRef})
+  searchInput!:ElementRef;
   
   // Msg service observable determines whether to display the search input or a user
   get getChatHeaderDisp():string {
     return this.msgService.chatHeader;
   }
 
-    // Display search results when typing query in search box
-    valueChange(input:string) {
-      console.log(input);
-      this.usrSearchService.searchForUser(input);
+  // Display search results when typing query in search box
+  @HostListener('window:keyup', ['$event'])
+  onKeyPress(event:KeyboardEvent) {
+
+    this.usrSearchService.searchForUser(this.searchInput.nativeElement.value);
+    if (event.key === "Escape") {
+      this.clearSearchInput();
     }
-  
-    clear() {
-      this.usrSearchService.closeSearchResults()
-    }
+  }
+
+  clearSearchInput() {
+    this.searchInput.nativeElement.value = '';
+  }
   
 
   constructor(
     private msgService:MessageService,
     private usrSearchService:UserSearchService) {
+
     // Observable pattern
     this.getChatHeaderDisp;
   }
 
-  ngOnInit(): void {}
+  ngAfterViewInit(): void {}
 
 
 }

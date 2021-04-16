@@ -1,4 +1,7 @@
-<ng-container [ngTemplateOutlet]="inputBoxTemplateRef"></ng-container>
+<ng-container 
+  #searchInput 
+  [ngTemplateOutlet]="inputBoxTemplateRef"
+  ></ng-container>
 
   <div 
   [searchResultsLocation]="location" 

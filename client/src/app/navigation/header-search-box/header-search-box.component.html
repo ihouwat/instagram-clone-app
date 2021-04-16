@@ -2,7 +2,7 @@
 
   <ng-template #inputBoxTemplate>
     <ibm-search
-      #searchBox
+      autocomplete="off"
       theme="dark"
       [placeholder]=""
       [disabled]="disableSearchBox()"
@@ -14,8 +14,8 @@
   </ng-template>
 
   
-  <app-user-search-results-2 
+  <app-user-search
     [inputBoxTemplate]="inputBoxTemplate"
-    [location]="'header'"></app-user-search-results-2>
+    [location]="'header'"></app-user-search>
 
 </div>

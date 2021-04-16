@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // import custom modules and services
-import { NavigationModule } from './shared/navigation/navigation.module';
+import { NavigationModule } from './navigation/navigation.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { UserFeedModule } from './user-feed/user-feed.module';
 import { SessionManagementService } from './shared/services/session-management.service';
@@ -29,12 +29,12 @@ import { MessagesModule } from './messages/messages.module';
     UserFeedModule,
     PostsModule,  
     NewsFeedModule,
-    MessagesModule
+    MessagesModule,
   ],
   providers: [
     SessionManagementService,
     UserManagementService,
-    PostManagementService
+    PostManagementService,
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],

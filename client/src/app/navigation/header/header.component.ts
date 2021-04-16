@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { SessionManagementService } from '../../services/session-management.service';
-import { UserManagementService } from '../../services/user-management.service';
-import { User } from '../../../model/types';
+import { SessionManagementService } from '../../shared/services/session-management.service';
+import { UserManagementService } from '../../shared/services/user-management.service';
+import { User } from '../../model/types';
  
 @Component({
   selector: 'app-header',

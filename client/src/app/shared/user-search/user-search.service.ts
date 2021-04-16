@@ -58,6 +58,7 @@ export class UserSearchService {
   }
 
   constructor(private userService:UserManagementService) {
+    
     // Subscribe to the observable 
     this.searchResultsDisplaySubject.subscribe((value) =>
       {next: (this.searchResultsDisp = value)}

@@ -9,13 +9,14 @@ import { MessagesHeaderComponent } from './messages-header/messages-header.compo
 import { ChatListComponent } from './chat-list/chat-list.component';
 import { ChatHeaderComponent } from './chat-header/chat-header.component';
 import { MessageDisplayComponent } from './message-display/message-display.component';
-import { DirectivesModule } from '../shared/directives/directives.module'
+import { UserSearchModule } from '../shared/user-search/user-search.module'
 import { NgPipesModule } from 'ngx-pipes';
-import { NavigationModule } from '../shared/navigation/navigation.module';
+
 
 // carbon design components
 import { ButtonModule, InputModule, TilesModule, ComboBoxModule, SearchModule } from 'carbon-components-angular';
 import { EditModule } from '@carbon/icons-angular';
+import { UserSearchComponent } from '../shared/user-search/user-search-component/user-search.component';
 
 
 @NgModule({
@@ -31,13 +32,12 @@ import { EditModule } from '@carbon/icons-angular';
     ButtonModule,
     EditModule,
     InputModule,
-    DirectivesModule,
     NgPipesModule,
     MessagesRoutingModule,
     TilesModule,
     ComboBoxModule,
-    NavigationModule,
-    SearchModule
+    SearchModule,
+    UserSearchModule
   ],
   providers: [MessageService],
   schemas: [NO_ERRORS_SCHEMA]

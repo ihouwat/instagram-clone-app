@@ -1,18 +1,15 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppRoutingModule } from '../../app-routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 // import custom components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderSearchBoxComponent } from './header-search-box/header-search-box.component';
-import { SearchResultsAttributeDirective } from './search-results-attr.directive';
-import { UserSearchResultsComponent } from './user-search-results/user-search-results.component';
-import { UserSearchResultsComponent2 } from './user-search-results-2/user-search-results.component-2';
-import { UserSearchService } from './user-search.service';
+import { UserSearchModule } from '../shared/user-search/user-search.module'
 
 // import carbon design modules
-import {SearchModule, ButtonModule, DialogModule} from 'carbon-components-angular';
+import {SearchModule, ButtonModule} from 'carbon-components-angular';
 import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule, 
   LogoGithubModule, LogoTwitterModule, LogoLinkedinModule} from '@carbon/icons-angular';
 
@@ -22,9 +19,6 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
     HeaderComponent,
     FooterComponent,
     HeaderSearchBoxComponent,
-    UserSearchResultsComponent,
-    SearchResultsAttributeDirective,
-    UserSearchResultsComponent2
   ],
   imports: [
     CommonModule,
@@ -38,17 +32,13 @@ import {HomeModule, SendAltModule, AddAltModule, UserAvatarModule,
     LogoGithubModule,
     LogoTwitterModule,
     LogoLinkedinModule,
-    DialogModule,
+    UserSearchModule,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     HeaderSearchBoxComponent,
-    UserSearchResultsComponent,
-    SearchResultsAttributeDirective,
-    UserSearchResultsComponent2
   ],
-  providers: [UserSearchService],
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class NavigationModule { }

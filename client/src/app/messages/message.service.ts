@@ -61,8 +61,22 @@ export class MessageService {
 
   openChat(chat:Chat) {
     // Fetch list of messages here
-
     this.markMessagesRead(chat);
+  }
+
+  // Currently a mock implementation
+  getIndividualChat(user:User) {
+    // Fetch the chat 
+    let chat:Array<Chat> = [];
+    this.chatList.filter(c => 
+      c.participants.filter(p => {
+        if(p.username === user.username.toLowerCase()) {
+          chat.push(c);
+        }})
+    )
+    // Start a new chat
+    this.displayUser();
+    return chat[0];
   }
 
   // Helper method to mark all messages in a chat as read

@@ -1,14 +1,14 @@
 <div class="chat-header" [ngSwitch]="getChatHeaderDisp">
 
     <ng-container *ngSwitchCase="'DisplaySearch'">
-
       <ng-template #inputBoxTemplate>
         <p>To:</p>
   
         <input 
           focusInput
+          #searchInput
           class="msg-search-text-area"
-          [value]=""
+          (onKeyPress)="onKeyPress($event)"
           ibmText
           size="xl"
           theme="light"
@@ -16,9 +16,11 @@
         > 
       
     </ng-template>
-    <app-user-search-results-2 
+    
+
+    <app-user-search
       [inputBoxTemplate]="inputBoxTemplate"
-      [location]="'messages'"></app-user-search-results-2>
+      [location]="'messages'"></app-user-search>
 
     </ng-container>
     
@@ -28,3 +30,5 @@
     </ng-container>
 
   </div>
+
+  

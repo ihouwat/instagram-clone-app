@@ -20,9 +20,8 @@ export class ChatHeaderComponent implements AfterViewInit {
   }
 
   // Display search results when typing query in search box
-  @HostListener('window:keyup', ['$event'])
-  onKeyPress(event:KeyboardEvent) {
-
+  @HostListener('keyup', ['$event'])
+  onKeyUp(event:KeyboardEvent) {
     this.usrSearchService.searchForUser(this.searchInput.nativeElement.value);
     if (event.key === "Escape") {
       this.clearSearchInput();
@@ -31,6 +30,7 @@ export class ChatHeaderComponent implements AfterViewInit {
 
   clearSearchInput() {
     this.searchInput.nativeElement.value = '';
+    this.usrSearchService.closeSearchResults();
   }
   
 

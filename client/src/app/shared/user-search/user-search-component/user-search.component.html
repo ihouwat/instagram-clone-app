@@ -1,17 +1,15 @@
-<ng-container 
-  #searchInput 
-  [ngTemplateOutlet]="inputBoxTemplateRef"
-  ></ng-container>
+<ng-container [ngTemplateOutlet]="inputBoxTemplateRef"></ng-container>
 
   <div 
   [searchResultsLocation]="location" 
-  role="listbox" 
-  #searchBoxResults 
+  searchInput
+  role="listbox"
   class="search-results-display" 
   *ngIf="getSearchResultsDisplay">
   
   <ng-container *ngIf="getSearchResultsList.length > 0 else emptySearch">
-    <ibm-overflow-menu-option 
+    <ibm-overflow-menu-option
+      searchInput
       (click)="setRoute(result)" 
       *ngFor="let result of getSearchResultsList" 
       role="option" 

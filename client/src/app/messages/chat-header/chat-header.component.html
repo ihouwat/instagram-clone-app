@@ -5,10 +5,12 @@
         <p>To:</p>
   
         <input 
+          searchInput
           focusInput
+
           #searchInput
           class="msg-search-text-area"
-          (onKeyPress)="onKeyPress($event)"
+          (keyup)="onKeyUp($event)"
           ibmText
           size="xl"
           theme="light"

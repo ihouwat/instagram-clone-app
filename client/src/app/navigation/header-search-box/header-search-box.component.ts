@@ -11,11 +11,11 @@ export class HeaderSearchBoxComponent implements OnInit {
   // Inherits login status from parent components
   @Input('signedIn') signedIn!:boolean;
   
-
   // Disable/Enable search box based on login status
   disableSearchBox():boolean {
     return this.signedIn === true ? false : true;
   }
+
 
   // Display search results when typing query in search box
   valueChange(input:string) {

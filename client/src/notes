@@ -1,8 +1,11 @@
+Fix bugginess of opening and closing search boxes
+  - only close search box in header component
+  - detect mouse events on search results to prevent closing
+
 Open new message:
 - Implement activated route to fetch individual messages
-- Orchestrate displaying messsage and chatHeader DisplayUser state
+- Orchestrate displaying message and chatHeader DisplayUser state
 
-Fix bugginess of opening and closing search boxes
 Document templates to indicate that they are coming from a ngTemplateOutlet
 
 Create component on user page if user has no posts yet

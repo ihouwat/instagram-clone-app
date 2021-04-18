@@ -11,8 +11,8 @@ export class UserSearchService {
   public searchResultsDisp!:boolean; // Boolean for opening/closing search box
 
   // Observable to determine whether ChatHeaderComponent displays input search or user
-  searchResultsDisplaySubject: Subject<boolean> = new Subject<boolean>(); // Boolean for opening/closing search box
-
+  searchResultsDisplaySubject: Subject<boolean> = new Subject<boolean>(); // Boolean for opening/closing search box\
+  
   public searchResultsList:Array<User> = []; // List of search results
 
   searchResultsListSubject: Subject<any> = new Subject<any>();
@@ -23,16 +23,7 @@ export class UserSearchService {
     // Only refresh input list when 
     if(input.length > 0) {
       this.searchResultsListSubject.next(this.userService.searchForUsers(input))
-    }
-    
-    // Start displaying results once user has typed at least three characters
-    if(input.length >= 3) {
       this.openSearchResults();
-    }
-
-    // Hide search results for 'backspace' key event that clears query
-    if(input.length === 0) {
-      this.closeSearchResults();
     }
     
   }

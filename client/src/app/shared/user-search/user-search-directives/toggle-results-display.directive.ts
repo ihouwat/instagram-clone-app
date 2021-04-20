@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, OnInit } from '@angular/core'
+import { Directive, ElementRef, HostListener } from '@angular/core'
 import { UserSearchService } from '../user-search.service';
 
 @Directive({
@@ -10,42 +10,70 @@ import { UserSearchService } from '../user-search.service';
   selector automatically focuses on initialization
 */
 
-export class ToggleResultsDisplayDirective implements OnInit {
+export class ToggleResultsDisplayDirective {
 
-  
+  overflowMenuClass:string = "search-results-display";
+  listItemResult:string = "search-result-list-item";
+  menuIsOpen:boolean = false;
+
   get getSearchResultsDisplay():boolean {
     return this.usrSearchService.searchResultDispStatus;
   }
 
-  @HostListener('window:click', ['$event'])
-  listen(e:Event) {
+  @HostListener('click', ['$event, $event.path'])
+  clickHandler(event:Event, eventPath:Array<any>):any {
     
-    console.log(this.elementRef.nativeElement);
-    
-    if(this.elementRef?.nativeElement.contains(e.target)) {
-      this.toggleDisplay();
+    let closeMenu:boolean = this.checkCloseOverflowMenu(eventPath);
+
+    if (closeMenu === true) {
+      this.menuIsOpen = false;
+      this.usrSearchService.closeSearchResults();
     }
 
-    // if(!this.elementRef?.nativeElement.contains(e.target)) {
-    //   this.usrSearchService.closeSearchResults();
-    // }
-
+    else if(
+        closeMenu === false 
+        && this.elementRef?.nativeElement.contains(event.target)
+        && !this.elementRef?.nativeElement?.classList?.contains(this.overflowMenuClass)) {
+          this.toggleDisplay();
+          event.stopImmediatePropagation()
+    }
+    
+    else this.checkClickOut
   }
 
+  @HostListener('document:click', ['$event.path']) 
+  checkClickOut(eventPath:Array<any>) {
+    if (this.menuIsOpen && !eventPath.some(e => e?.classList?.contains(this.overflowMenuClass))) {
+      this.usrSearchService.closeSearchResults();
+    }
+  }
+
+  checkCloseOverflowMenu(eventPath:Array<any>):boolean {
+    let listItem = eventPath.some(e => e?.classList?.contains(this.listItemResult))
+    let overflowMenu = eventPath.some(e => e?.classList?.contains(this.overflowMenuClass))
+
+    if (listItem && overflowMenu) return true
+    else return false
+  }
+
+
   toggleDisplay() {
-   !this.getSearchResultsDisplay 
-    ? this.usrSearchService.openSearchResults()
-    : this.usrSearchService.closeSearchResults()
+    if(!this.getSearchResultsDisplay) {
+      this.usrSearchService.openSearchResults();
+      this.menuIsOpen = true;
+    }
+    else {
+      this.usrSearchService.closeSearchResults();
+      this.menuIsOpen = false;
+    }
   }
 
   constructor(
     private elementRef: ElementRef,
     private usrSearchService:UserSearchService) {
-
-    this.listen
+    this.clickHandler
     this.getSearchResultsDisplay
   
   }
 
-  ngOnInit (): void {}
 }

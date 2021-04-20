@@ -1,3 +1,8 @@
+/*
+  Positioning styles for search display results 
+  menu are found in parent components
+*/
+
 .search-results-display {
   position: absolute;
   margin-top: 4px;
@@ -11,6 +16,7 @@
 
   ibm-overflow-menu-option.search-result-list-item {
     height: fit-content; // buggy on Safari, to test
+    padding: 0 16px;
     &:active, &:visited {
       background-color: $hover-selected-ui;
     }
@@ -18,6 +24,7 @@
       max-width: 100%;
       border-bottom: 1px solid $ui-03;
       outline: none;
+      padding: 0;
       div.bx--overflow-menu-options__option-content {
         display: grid;
         grid-template-columns: 40px;
@@ -55,14 +62,4 @@
     color: $text-03;
   }
 
-  // Placement stylings for search results in header component
-  &.header-location {
-    margin-left: -63px;
-  }
-
-  // Placement stylings for search results in messages component
-  &.messages-location {
-    left: 44px;
-    top: 44px;
-  }
 }

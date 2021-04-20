@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, Renderer2, TemplateRef, ViewChild } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'src/app/messages/message.service';
 import { User } from 'src/app/model/types';
@@ -8,7 +8,7 @@ import { UserSearchService } from '../user-search.service';
   selector: 'app-user-search',
   templateUrl: './user-search.component.html',
 })
-export class UserSearchComponent<T> implements AfterViewInit{
+export class UserSearchComponent<T> {
 
   /*
     Get a location string from parent component and 
@@ -17,9 +17,6 @@ export class UserSearchComponent<T> implements AfterViewInit{
   @Input("location") location!:string; 
   @Input("inputBoxTemplate")
   inputBoxTemplateRef!: TemplateRef<T>;
-
-  @ViewChild("searchResultOption") searchResultOption!:ElementRef;
-  
 
   get getSearchResultsDisplay():boolean {
     return this.usrSearchService.searchResultsDisp;
@@ -40,13 +37,10 @@ export class UserSearchComponent<T> implements AfterViewInit{
     }
 
   }
-  
 
   constructor(
     private usrSearchService:UserSearchService,
     private msgService:MessageService,
     private route:Router) {}
-
-  ngAfterViewInit(): void {}
 
 }

@@ -1,0 +1,10 @@
+// Search box for users
+.users-search-box {
+  flex: 1;
+  max-width: 215px;
+
+  // Positioning overflow menu for search results in header component
+  .search-results-display {
+    margin-left: -63px;
+  }
+}

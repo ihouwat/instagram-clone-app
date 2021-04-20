@@ -6,7 +6,6 @@ import { MessageService } from '../message.service';
 @Component({
   selector: 'app-chat-header',
   templateUrl: './chat-header.component.html',
-  styleUrls: ['./chat-header.component.scss'],
   providers: [UserSearchService]
 })
 export class ChatHeaderComponent implements AfterViewInit {
@@ -41,8 +40,11 @@ export class ChatHeaderComponent implements AfterViewInit {
     // Observable pattern
     this.getChatHeaderDisp;
   }
-
-  ngAfterViewInit(): void {}
+  
+  ngAfterViewInit(): void {
+    // Open search results menu after init
+    this.usrSearchService.openSearchResults();
+  }
 
 
 }

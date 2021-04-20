@@ -1,6 +1,7 @@
 Fix bugginess of opening and closing search boxes
-  - only close search box in header component
-  - detect mouse events on search results to prevent closing
+  - if menu is open and you click on input box, menu stays open
+  - inject 'toggle menu' directive locally into relevant components
+  - Check FB for more functionality
 
 Open new message:
 - Implement activated route to fetch individual messages

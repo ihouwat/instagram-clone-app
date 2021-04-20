@@ -1,0 +1,45 @@
+.chat-header {
+
+  app-user-search {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 3.5rem;
+    border-bottom: 1px solid $ui-03;
+  
+    p {
+      margin-left: 16px;
+      color: $text-03;
+      @include carbon--type-style("body-short-01");
+      color: $text-01;
+    }
+  
+    // input box
+    .msg-search-text-area {
+      outline: none;
+      border-bottom: none;
+    }
+
+    // Search results overflow menu
+    .search-results-display {
+      height: 200px;
+      left: 44px !important;
+      top: 44px !important;
+      z-index: 99; // 1 less than the default component style
+    }
+  
+    // Image on displaying a user
+    .user-image {
+      border-radius: 50%;
+      margin-left: 16px;
+    }
+  
+    .username {
+      font-weight: 700;
+      @include carbon--type-style("productive-heading-02");
+      color: $text-01;
+      font-size: 16px;
+    }
+  }
+
+} 

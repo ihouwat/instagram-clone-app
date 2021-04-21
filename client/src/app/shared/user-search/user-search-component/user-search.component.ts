@@ -27,6 +27,7 @@ export class UserSearchComponent<T> {
   }
 
   setRoute(searchResult:User){
+
     switch(this.location) {
       case "header":
         return this.route.navigate(['/user', searchResult.username]);

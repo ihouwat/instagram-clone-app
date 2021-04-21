@@ -2,14 +2,14 @@
 
   <div 
   [searchResultsLocation]="location" 
-  searchInput
   role="listbox"
+  (click)="$event.stopPropagation()"
   class="search-results-display" 
   *ngIf="getSearchResultsDisplay">
   
   <ng-container *ngIf="getSearchResultsList.length > 0 else emptySearch">
     <ibm-overflow-menu-option
-      searchInput
+      toggleSearchResults
       (click)="setRoute(result)" 
       *ngFor="let result of getSearchResultsList" 
       role="option" 

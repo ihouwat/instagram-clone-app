@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 import { UserSearchService } from '../../shared/user-search/user-search.service';
 import { MessageService } from '../message.service';
@@ -8,7 +8,7 @@ import { MessageService } from '../message.service';
   templateUrl: './chat-header.component.html',
   providers: [UserSearchService]
 })
-export class ChatHeaderComponent implements AfterViewInit {
+export class ChatHeaderComponent {
 
   @ViewChild("searchInput", {read: ElementRef})
   searchInput!:ElementRef;
@@ -39,12 +39,8 @@ export class ChatHeaderComponent implements AfterViewInit {
 
     // Observable pattern
     this.getChatHeaderDisp;
-  }
-  
-  ngAfterViewInit(): void {
-    // Open search results menu after init
-    this.usrSearchService.openSearchResults();
-  }
 
+    this.usrSearchService.openSearchResults()
+  }
 
 }

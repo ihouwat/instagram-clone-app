@@ -2,78 +2,57 @@ import { Directive, ElementRef, HostListener } from '@angular/core'
 import { UserSearchService } from '../user-search.service';
 
 @Directive({
-  selector: "[searchInput]"
+  selector: "[toggleSearchResults]"
 })
 
 /*
-  This directive ensures any input element with a'focusInput'
-  selector automatically focuses on initialization
+  This directive ensures any element with a'toggleSearchResults'
+  toggles the appearance of the UserSearchComponent results menu
 */
 
 export class ToggleResultsDisplayDirective {
 
-  overflowMenuClass:string = "search-results-display";
-  listItemResult:string = "search-result-list-item";
+  // Flag to toggle appearance of overflow menu
   menuIsOpen:boolean = false;
 
-  get getSearchResultsDisplay():boolean {
-    return this.usrSearchService.searchResultDispStatus;
-  }
+  @HostListener('click', ['$event.path'])
+  clickHandler(eventPath:Array<any>) {
 
-  @HostListener('click', ['$event, $event.path'])
-  clickHandler(event:Event, eventPath:Array<any>):any {
-    
-    let closeMenu:boolean = this.checkCloseOverflowMenu(eventPath);
+    // If you click on search input and results menu is not open, open it
+    if(this.menuIsOpen === false) {
+      this.usrSearchService.openSearchResults();
+      this.toggleMenuIsOpen();
+    }
 
-    if (closeMenu === true) {
-      this.menuIsOpen = false;
+    // If results menu is open and you click on a list result item, close the menu
+    if(this.menuIsOpen === true && eventPath.some(e => e?.classList?.contains('search-result-list-item'))) {
       this.usrSearchService.closeSearchResults();
-    }
-
-    else if(
-        closeMenu === false 
-        && this.elementRef?.nativeElement.contains(event.target)
-        && !this.elementRef?.nativeElement?.classList?.contains(this.overflowMenuClass)) {
-          this.toggleDisplay();
-          event.stopImmediatePropagation()
+      this.toggleMenuIsOpen();
     }
     
+    // Go to global click handler method
     else this.checkClickOut
   }
 
-  @HostListener('document:click', ['$event.path']) 
-  checkClickOut(eventPath:Array<any>) {
-    if (this.menuIsOpen && !eventPath.some(e => e?.classList?.contains(this.overflowMenuClass))) {
+  @HostListener('document:click', ['$event']) 
+  checkClickOut(event:Event) {
+    // If the click event is outside the elementRef, close the results menu
+    if (this.menuIsOpen && !this.elementRef?.nativeElement?.contains(event.target)) {
       this.usrSearchService.closeSearchResults();
+      this.toggleMenuIsOpen();
     }
   }
 
-  checkCloseOverflowMenu(eventPath:Array<any>):boolean {
-    let listItem = eventPath.some(e => e?.classList?.contains(this.listItemResult))
-    let overflowMenu = eventPath.some(e => e?.classList?.contains(this.overflowMenuClass))
-
-    if (listItem && overflowMenu) return true
-    else return false
-  }
-
-
-  toggleDisplay() {
-    if(!this.getSearchResultsDisplay) {
-      this.usrSearchService.openSearchResults();
-      this.menuIsOpen = true;
-    }
-    else {
-      this.usrSearchService.closeSearchResults();
-      this.menuIsOpen = false;
-    }
+  // Toggle the menuIsOpen flag
+  toggleMenuIsOpen() {
+    this.menuIsOpen = !this.menuIsOpen;
   }
 
   constructor(
     private elementRef: ElementRef,
     private usrSearchService:UserSearchService) {
-    this.clickHandler
-    this.getSearchResultsDisplay
-  
+
+    this.clickHandler  
   }
 
 }

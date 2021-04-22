@@ -40,7 +40,7 @@ export class ChatHeaderComponent {
     // Observable pattern
     this.getChatHeaderDisp;
 
-    this.usrSearchService.openSearchResults()
+    this.usrSearchService.openSearchResults();
   }
 
 }

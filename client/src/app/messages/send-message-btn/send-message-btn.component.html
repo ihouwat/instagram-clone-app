@@ -1,0 +1,12 @@
+<ng-container>
+  <button 
+    (click)="startChat($event)" 
+    [ibmButton]="ibmButtonType" 
+    [size]="size" 
+    [iconOnly]=iconOnlyFlag>
+  
+    <!-- Button content goes here -->
+    <ng-container [ngTemplateOutlet]="buttonContent"></ng-container>
+  
+  </button>
+</ng-container>

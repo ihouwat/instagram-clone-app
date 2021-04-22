@@ -1,20 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-messages-header',
   templateUrl: './messages-header.component.html',
-  styleUrls: ['./messages-header.component.scss']
+  styleUrls: ['./messages-header.component.scss'],
 })
-export class MessagesHeaderComponent implements OnInit {
-
-  startChat() {
-    this.messagesService.startNewChat();
-  }
-
-  constructor(private messagesService:MessageService) { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class MessagesHeaderComponent {}

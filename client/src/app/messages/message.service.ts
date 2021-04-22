@@ -32,6 +32,11 @@ export class MessageService {
 
   // Observable to determine whether ChatHeaderComponent displays input search or user
   chatHeaderSubj: Subject<CHATHEADER> = new Subject<CHATHEADER>();
+
+  // Get the display status of the chat header component (see interface above)
+  get chatHeaderStatus():CHATHEADER {
+    return this.chatHeader;
+  }
   
   // Emits a value so that ChatHeaderComponent displays input search
   startNewChat() {

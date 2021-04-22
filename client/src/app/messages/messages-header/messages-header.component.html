@@ -2,10 +2,10 @@
 
   <h2>Messages</h2>
 
-  <button (click)="startChat()" ibmButton="ghost" size="sm" [iconOnly]=true>
-
-    <svg ibmIconEdit class="bx--btn__icon" size="32"></svg>
-  
-  </button>
+  <app-send-message-btn ibmButtonType="ghost" size="sm" [iconOnlyFlag]=true>
+    <ng-template #buttonContent>    
+      <svg ibmIconEdit class="bx--btn__icon" size="32"></svg>
+    </ng-template>
+  </app-send-message-btn>
 
 </div>

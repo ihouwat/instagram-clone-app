@@ -7,6 +7,12 @@
     <img src="../../../assets/images/send--alt.svg" width="100"/>
     <h2>Your Messages</h2>
     <p>Send private messages to a friend.</p>
-    <button (click)="startChat()" ibmButton="primary">Send Message</button>
+
+    <app-send-message-btn 
+    ibmButtonType="primary"
+    [iconOnlyFlag]=false>
+      <ng-template #buttonContent>Send Message</ng-template>
+    </app-send-message-btn>
+
   </div>
 </ng-template>

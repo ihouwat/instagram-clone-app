@@ -13,29 +13,31 @@ import { UserSearchService } from '../user-search.service';
 export class ToggleResultsDisplayDirective {
 
   // Flag to toggle appearance of overflow menu
-  menuIsOpen:boolean = false;
+  menuIsOpen:boolean= this.usrSearchService.searchResultDispStatus;
 
   @HostListener('click', ['$event.path'])
   clickHandler(eventPath:Array<any>) {
 
-    // If you click on search input and results menu is not open, open it
-    if(this.menuIsOpen === false) {
+    // If user clicks on search input and results menu is not open, open it
+    if(this.menuIsOpen === false || this.menuIsOpen === undefined) {
       this.usrSearchService.openSearchResults();
       this.toggleMenuIsOpen();
     }
 
-    // If results menu is open and you click on a list result item, close the menu
+    // If results menu is open and user clicks on a list result item, close the menu
     if(this.menuIsOpen === true && eventPath.some(e => e?.classList?.contains('search-result-list-item'))) {
       this.usrSearchService.closeSearchResults();
       this.toggleMenuIsOpen();
     }
-    
+
     // Go to global click handler method
     else this.checkClickOut
   }
 
   @HostListener('document:click', ['$event']) 
   checkClickOut(event:Event) {
+    console.log(this.menuIsOpen);
+
     // If the click event is outside the elementRef, close the results menu
     if (this.menuIsOpen && !this.elementRef?.nativeElement?.contains(event.target)) {
       this.usrSearchService.closeSearchResults();
@@ -52,7 +54,7 @@ export class ToggleResultsDisplayDirective {
     private elementRef: ElementRef,
     private usrSearchService:UserSearchService) {
 
-    this.clickHandler  
+    this.clickHandler
   }
 
 }

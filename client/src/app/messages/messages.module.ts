@@ -16,7 +16,7 @@ import { NgPipesModule } from 'ngx-pipes';
 // carbon design components
 import { ButtonModule, InputModule, TilesModule, ComboBoxModule, SearchModule } from 'carbon-components-angular';
 import { EditModule } from '@carbon/icons-angular';
-import { UserSearchComponent } from '../shared/user-search/user-search-component/user-search.component';
+import { SendMessageBtnComponent } from './send-message-btn/send-message-btn.component';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { UserSearchComponent } from '../shared/user-search/user-search-component
     MessagesHeaderComponent, 
     ChatListComponent, 
     MessageDisplayComponent, 
-    ChatHeaderComponent,
+    ChatHeaderComponent, 
+    SendMessageBtnComponent,
   ],
   imports: [
     CommonModule,

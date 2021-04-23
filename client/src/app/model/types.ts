@@ -61,6 +61,7 @@ export interface Chat {
 
 export interface Message {
   chatId:number; // Matches the chatroom id
+  content:string;
   sender:User;
   msgRead:boolean;
   date:Date;

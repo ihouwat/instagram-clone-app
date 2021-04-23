@@ -36,8 +36,6 @@ export class ToggleResultsDisplayDirective {
 
   @HostListener('document:click', ['$event']) 
   checkClickOut(event:Event) {
-    console.log(this.menuIsOpen);
-
     // If the click event is outside the elementRef, close the results menu
     if (this.menuIsOpen && !this.elementRef?.nativeElement?.contains(event.target)) {
       this.usrSearchService.closeSearchResults();

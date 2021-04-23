@@ -1,7 +1,4 @@
-- Search box in messages is always open when CHATHEADER.DisplaySearch enum (perhaps subscription?)
-
 Open new message:
-- Implement activated route to fetch individual messages
 - Orchestrate displaying message and chatHeader DisplayUser state
 
 Document templates to indicate that they are coming from a ngTemplateOutlet
@@ -10,6 +7,7 @@ Create component on user page if user has no posts yet
 
 To dos found in:
 
+- Find out why lazy loading is broken 
 - App routing module: Remove 'user' from Users routing module
 - Add forms validation
 - Routable modal angular to display individual posts

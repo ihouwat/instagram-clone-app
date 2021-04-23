@@ -1,5 +1,5 @@
 import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
-import { CHATHEADER } from "../message.service";
+import { ChatHeaderState } from "../message.service";
 import { MessageService } from "../message.service";
 import { UserSearchService } from "../../shared/user-search/user-search.service";
 import { ButtonSize, ButtonType } from 'carbon-components-angular';
@@ -20,11 +20,9 @@ export class SendMessageBtnComponent {
   @ContentChild('buttonContent', { static: false }) buttonContent!:TemplateRef<any>;
 
   startChat(event:Event) {
-    if (this.messagesService.chatHeaderStatus !== CHATHEADER.DisplaySearch) {
+    if (this.messagesService.chatHeaderStatus !== ChatHeaderState.DisplaySearch) {
       this.messagesService.startNewChat();
     }
-    console.log(this.usrSearchService.searchResultDispStatus);
-    this.usrSearchService.openSearchResults();
     /* 
       prevents global click handler in ToggleResultsDisplayDirective 
       from closing the results overflow menu
@@ -33,6 +31,5 @@ export class SendMessageBtnComponent {
   }
 
   constructor(
-    private messagesService:MessageService,
-    private usrSearchService:UserSearchService) {}
+    private messagesService:MessageService) {}
 }

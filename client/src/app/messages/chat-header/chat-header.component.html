@@ -1,6 +1,6 @@
-<div class="chat-header" [ngSwitch]="getChatHeaderDisp">
+<div class="chat-header" [ngSwitch]="chatHeaderDisplay">
 
-    <ng-container *ngSwitchCase="'DisplaySearch'">
+    <ng-container *ngSwitchCase="'DISPLAYSEARCH'">
       <ng-template #inputBoxTemplate>
         <p>To:</p>
   
@@ -26,9 +26,9 @@
 
     </ng-container>
     
-    <ng-container *ngSwitchCase="'DisplayUser'">
-      <img class="user-image" [src]="user.imageURL" width="32" />
-      <p class="username">{{user.username}}</p>
+    <ng-container *[ngSwitchCase]="'DISPLAYUSER'">
+      <!-- <img class="user-image" [src]="user.imageURL" width="32" />
+      <p class="username">{{user.username}}</p> -->
     </ng-container>
 
   </div>

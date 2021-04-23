@@ -2,6 +2,7 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 import { UserSearchService } from '../../shared/user-search/user-search.service';
 import { MessageService } from '../message.service';
+import { ChatHeaderState } from "../message.service";
 
 @Component({
   selector: 'app-chat-header',
@@ -12,9 +13,11 @@ export class ChatHeaderComponent {
 
   @ViewChild("searchInput", {read: ElementRef})
   searchInput!:ElementRef;
-  
+
+  chatHeaderState!:ChatHeaderState;
+
   // Msg service observable determines whether to display the search input or a user
-  get getChatHeaderDisp():string {
+  get chatHeaderDisplay():ChatHeaderState {
     return this.msgService.chatHeader;
   }
 
@@ -37,9 +40,10 @@ export class ChatHeaderComponent {
     private msgService:MessageService,
     private usrSearchService:UserSearchService) {
 
-    // Observable pattern
-    this.getChatHeaderDisp;
+    // Observable pattern to determine which template to display
+    this.chatHeaderDisplay;
 
+    // Search results overflow menu appears as the component is constructed
     this.usrSearchService.openSearchResults();
   }
 

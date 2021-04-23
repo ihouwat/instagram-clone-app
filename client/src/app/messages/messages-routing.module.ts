@@ -5,16 +5,16 @@ import { MessagesPageComponent } from './messages-page/messages-page.component';
 const routes:Routes = [
   { 
     path: '',
-    component: MessagesPageComponent
+    component: MessagesPageComponent,
   },
   {
     path: ':id',
-    component: MessagesPageComponent
-  }
+    component: MessagesPageComponent,
+  },
 ]
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes) ],
+  exports: [RouterModule],
 })
 export class MessagesRoutingModule {}

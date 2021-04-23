@@ -38,7 +38,7 @@ import { SendMessageBtnComponent } from './send-message-btn/send-message-btn.com
     TilesModule,
     ComboBoxModule,
     SearchModule,
-    UserSearchModule
+    UserSearchModule,
   ],
   providers: [MessageService],
   schemas: [NO_ERRORS_SCHEMA]

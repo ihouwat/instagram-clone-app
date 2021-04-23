@@ -16,8 +16,12 @@ const routes: Routes = [
     loadChildren: () => import('./user-feed/user-feed-routing.module').then(m => m.UserFeedRoutingModule)
   },
   { 
-    path: 'messages',
+    path: 'messages/:id',
     loadChildren: () => import('./messages/messages-routing.module').then(m => m.MessagesRoutingModule)
+  },
+  { 
+    path: 'messages',
+    loadChildren: () => import('./messages/messages-routing.module').then(m => m.MessagesRoutingModule),
   },
   { path: 'post/:id', component: PostPageComponent},
   { path: 'home', component: NewsFeedComponent},

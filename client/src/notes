@@ -1,5 +1,6 @@
-Open new message:
-- Orchestrate displaying message and chatHeader DisplayUser state
+Chat interface:
+- Add message input box
+- Add header with friend info
 
 Document templates to indicate that they are coming from a ngTemplateOutlet
 

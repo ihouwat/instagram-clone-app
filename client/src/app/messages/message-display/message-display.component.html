@@ -1,8 +1,20 @@
-<div class="message-display-container" *ngIf="messageSelected else noMessageSelected">
-  <p>message</p>
+<div class="message-display-container" *ngIf="chatSelected else noChatSelected">
+  
+  <ul class="msg-list">
+
+    <li
+      [ngClass]="checkIfAccountOwner(message.sender)"
+      *ngFor="let message of chatMessages">
+      <span >
+        {{message.content}}
+      </span>
+    </li>
+
+  </ul>
+
 </div>
 
-<ng-template #noMessageSelected>
+<ng-template #noChatSelected>
   <div class="no-msg-selected">
     <img src="../../../assets/images/send--alt.svg" width="100"/>
     <h2>Your Messages</h2>

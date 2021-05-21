@@ -1,3 +1,7 @@
+.message-display-container {
+  padding: 0px 16px 24px 16px;
+}
+
 .no-msg-selected {
   display: flex;
   flex-direction: column;
@@ -22,5 +26,45 @@
     // color: &text-03;
     font-size: 16px;
     color: #a8a8a8;
+  }
+}
+
+.msg-list {
+
+  // Shared chat bubble styles
+  li {
+    width: 100%;
+    margin: 12px 0;
+    display: flex;
+
+    span {
+      display: inline-block;
+      padding: 12px 8px;
+      max-width: 350px;
+      // background-color: red;
+      min-height: 40px;
+  
+      // ADD CARBON STYLES LATER
+      color: white;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+  }
+
+  // Chat bubble style for account owner
+  .account-owner-bubble {
+    justify-content: flex-end;
+    span {
+      background-color: #0f62fe;
+      // background-color: $interactive-01;
+    }
+  }
+  
+  // Chat bubble style for other person
+  .other-person-bubble {
+    span{
+      background-color: #3D3D3D;
+    }
   }
 }

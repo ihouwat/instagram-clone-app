@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute, Router, RoutesRecognized } from '@angular/router';
 import { Subject } from 'rxjs';
 
 import { UserManagementService } from '../shared/services/user-management.service';
@@ -6,7 +7,7 @@ import { User, Chat } from '../model/types'
 
 // mock
 import { CHATLIST } from '../../mock/chatsDB';
-import { ActivatedRoute, Router, ParamMap, RoutesRecognized, NavigationEnd } from '@angular/router';
+import { MESSAGES } from "../../mock/messagesDB";
 
 
 // Enum determining whether ChatHeaderComponent displays input search or user
@@ -22,8 +23,6 @@ export enum ChatHeaderState  {
 
 export class MessageService {
 
-  private routeData!:any;
-
   currentUser:User = this.userService.getCurrentUser();
 
   // Mock DB implementation
@@ -35,11 +34,23 @@ export class MessageService {
   // Observable to determine whether ChatHeaderComponent displays input search or user
   chatHeaderSubj: Subject<ChatHeaderState> = new Subject<ChatHeaderState>();
 
+  // Variable that holds boolean flag indicating whether chat has been selected
+  chatIsSelected!: boolean;
+
+  // Observable to determine whether user has selected a chat or not
+  chatIsSelectedSubj: Subject<boolean> = new Subject<boolean>();
+
+  // Observable when fetching chat messages
+  chatMessagesSubj: Subject<any> = new Subject<any>();
+
+  // List of chat messages
+  chatMessages!: any;
+
   // Get the display status of the chat header component (see interface above)
   get chatHeaderStatus():ChatHeaderState {
     return this.chatHeader;
   }
-  
+
   // Emits a value so that ChatHeaderComponent displays input search
   startNewChat() {
     this.chatHeaderSubj.next(ChatHeaderState.DisplaySearch);
@@ -66,9 +77,16 @@ export class MessageService {
     return this.chatList;
   }
 
+  // Fetch a chat's messages when user selects a chat 
   openChat(chat:Chat) {
-    // Fetch list of messages here
+
+    // Mark the chat thread as read
     this.markMessagesRead(chat);
+
+    // Tells the message display component that a chat was selected
+    this.chatSelectedIsTrue();
+    
+    this.getMessagesByChatID();
   }
 
   // Currently a mock implementation
@@ -83,6 +101,7 @@ export class MessageService {
     )
     // Start a new chat
     this.displayUser();
+
     return chat[0];
   }
 
@@ -95,21 +114,55 @@ export class MessageService {
   markMessagesUnread(chat:Chat) {
     chat.unreadMessages = true;
   }
+
+  chatSelectedIsTrue() {
+    this.chatIsSelectedSubj.next(true);
+  }
+
+  chatSelectedIsFalse() {
+    this.chatIsSelectedSubj.next(false);
+  }
+
+  get chatSelectedStatus():boolean {
+    return this.chatIsSelected;
+  }
+
+  /* 
+    Get a list of messages, using observable pattern.
+    Note this is a mock and we'll eventually fetch by chat ID
+  */
+  getMessagesByChatID(){
+    this.chatMessagesSubj.next(MESSAGES);
+  }
+
+  get listOfMessages():any {
+    return this.chatMessages;
+  }
   
   constructor(
     private userService:UserManagementService,
     public router: Router,
     public route:ActivatedRoute) { 
 
-    // Subscribe to the observable 
+    // Subscribe to the chatHeaderSubj observable 
     this.chatHeaderSubj.subscribe((value) =>
       {next: (this.chatHeader = value)}
     )
 
-    // 
+    // Subscribe to the chatIsSelectedSubj observable 
+    this.chatIsSelectedSubj.subscribe((value) => 
+      {next: (this.chatIsSelected = value)}
+    )
+
+    // Subscribe to the chatMessagesSubj observable
+    this.chatMessagesSubj.subscribe((value) =>
+      {next: (this.chatMessages = value)}
+    )
+
+    // Get the id of the chat
     this.router.events.subscribe(val => {
       if (val instanceof RoutesRecognized) {
-          console.log(val.state.root.firstChild?.params);
+          // console.log(val.state.root.firstChild?.params);
       }
     });
     

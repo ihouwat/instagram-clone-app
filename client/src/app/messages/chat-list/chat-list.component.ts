@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MessageService } from '../message.service';
-import { Chat, User } from '../../model/types';
+import { Chat } from '../../model/types';
 
 
 @Component({

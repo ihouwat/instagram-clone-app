@@ -46,6 +46,9 @@ export class MessageService {
   // List of chat messages
   chatMessages!: any;
 
+  // Observable that tracks which person the account owner is chatting with
+  // chat
+
   // Get the display status of the chat header component (see interface above)
   get chatHeaderStatus():ChatHeaderState {
     return this.chatHeader;
@@ -79,14 +82,16 @@ export class MessageService {
 
   // Fetch a chat's messages when user selects a chat 
   openChat(chat:Chat) {
-
+    
     // Mark the chat thread as read
     this.markMessagesRead(chat);
 
     // Tells the message display component that a chat was selected
     this.chatSelectedIsTrue();
     
-    this.getMessagesByChatID();
+    // Fetch existing messages and participants from this chat
+    this.getMessageInfoByChatID(chat);
+
   }
 
   // Currently a mock implementation
@@ -128,11 +133,12 @@ export class MessageService {
   }
 
   /* 
-    Get a list of messages, using observable pattern.
+    Get a list of messages and the other chat participant, using observable pattern.
     Note this is a mock and we'll eventually fetch by chat ID
   */
-  getMessagesByChatID(){
-    this.chatMessagesSubj.next(MESSAGES);
+  getMessageInfoByChatID(chat:Chat){
+    let chatInfo = new Array(MESSAGES, chat.participants[1]);
+    this.chatMessagesSubj.next(chatInfo);
   }
 
   get listOfMessages():any {

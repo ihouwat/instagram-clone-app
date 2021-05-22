@@ -1,16 +1,44 @@
 <div class="message-display-container" *ngIf="chatSelected else noChatSelected">
   
-  <ul class="msg-list">
+  <div class="friend-avatar">
 
-    <li
-      [ngClass]="checkIfAccountOwner(message.sender)"
-      *ngFor="let message of chatMessages">
-      <span >
-        {{message.content}}
-      </span>
-    </li>
+    <img src={{chatInfo[1].imageURL}} width="24"/>
 
-  </ul>
+    <span>{{chatInfo[1].username}}</span>
+  
+  </div>
+
+  <div class="message-content">
+
+    <ul class="message-list" #messageList>
+  
+      <li
+        [ngClass]="checkIfAccountOwner(message.sender)"
+        *ngFor="let message of chatInfo[0]">
+
+        <span>{{message.content}}</span>
+      
+      </li>
+  
+    </ul>
+
+  </div>
+
+  <div class="message-text-input" [ngSwitch]="isSignedIn()">
+    <input
+      *ngSwitchCase=true
+      [value]=""
+      (keydown.enter)="getCommentValue($event.target)"
+      ibmText
+      size="xl"
+      theme="light"
+      placeholder="Type something"
+    >
+    <p *ngSwitchCase=false>
+      <a ibmLink [routerLink]="['/login']">Log in</a> 
+      to like or comment.</p>
+  
+  </div>
 
 </div>
 

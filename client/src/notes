@@ -1,7 +1,3 @@
-Chat interface:
-- Add message input box
-- Add header with friend info
-
 Document templates to indicate that they are coming from a ngTemplateOutlet
 
 Create component on user page if user has no posts yet

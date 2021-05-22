@@ -8,21 +8,17 @@
   
   </div>
 
-  <div class="message-content">
+  <ul class="message-list" #messageList>
 
-    <ul class="message-list" #messageList>
-  
-      <li
-        [ngClass]="checkIfAccountOwner(message.sender)"
-        *ngFor="let message of chatInfo[0]">
+    <li
+      [ngClass]="checkIfAccountOwner(message.sender)"
+      *ngFor="let message of chatInfo[0]">
 
-        <span>{{message.content}}</span>
-      
-      </li>
-  
-    </ul>
+      <span>{{message.content}}</span>
+    
+    </li>
 
-  </div>
+  </ul>
 
   <div class="message-text-input" [ngSwitch]="isSignedIn()">
     <input

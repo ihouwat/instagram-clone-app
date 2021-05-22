@@ -17,57 +17,59 @@
       font-weight: 700;
     }
   }
-  .message-content {
-    padding: 0px 16px 24px 16px;
-    .message-list {
-      height: calc(100vh - 536px);
-      overflow-y: scroll;
-      /* Hide scrollbar for IE, Edge and Firefox */
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+  .message-list {
+    display: block;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 12px;
+    height: calc(100vh - 512px);
+    overflow-y: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      // Shared chat bubble styles
-      li {
-        width: 100%;
-        margin: 12px 0;
-        display: flex;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    // Shared chat bubble styles
+    li {
+      width: 100%;
+      margin: 12px 0;
+      display: flex;
+  
+      span {
+        display: inline-block;
+        padding: 12px 8px;
+        max-width: 350px;
+        // background-color: red;
+        min-height: 40px;
     
-        span {
-          display: inline-block;
-          padding: 12px 8px;
-          max-width: 350px;
-          // background-color: red;
-          min-height: 40px;
-      
-          // ADD CARBON STYLES LATER
-          color: white;
-          font-size: 14px;
-          border-radius: 8px;
-        }
+        // ADD CARBON STYLES LATER
+        color: white;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+  
+    }
+  
+    // Chat bubble style for account owner
+    .account-owner-bubble {
+      justify-content: flex-end;
+      span {
+        background-color: #0f62fe;
+        // background-color: $interactive-01;
+      }
+    }
     
+    // Chat bubble style for other person
+    .other-person-bubble {
+      span{
+        background-color: #3D3D3D;
       }
-    
-      // Chat bubble style for account owner
-      .account-owner-bubble {
-        justify-content: flex-end;
-        span {
-          background-color: #0f62fe;
-          // background-color: $interactive-01;
-        }
-      }
-      
-      // Chat bubble style for other person
-      .other-person-bubble {
-        span{
-          background-color: #3D3D3D;
-        }
-      }
-    }    
-  }
+    }
+  }    
+  
 
   .message-text-input {
     // border-top: 1px solid $ui-03;

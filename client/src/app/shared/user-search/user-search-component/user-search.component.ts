@@ -19,7 +19,7 @@ export class UserSearchComponent<T> {
   inputBoxTemplateRef!: TemplateRef<T>;
 
   get getSearchResultsDisplay():boolean {
-    return this.usrSearchService.searchResultsDisp;
+    return this.usrSearchService.searchResultsDisplay;
   }
 
   get getSearchResultsList():any {

@@ -18,23 +18,23 @@ export class AuthenticationService {
   signUpInfo!:any;
   loginInfo!:any;
 
-  // Receive FormGroup from from Sign Up Component
+  // Receive FormGroup from Sign Up Component
   signUpUser(form:FormGroup):void {
     this.signUpInfo = form;
 
-    /* To implement: server returns user object to pass along to sessionService
-      for now, just select user from mock DB
+    /* To implement: server returns user object to pass along to sessionService.
+      For now, just select user from mock DB
     */
     const user = USERS[0];
     this.signIn(user);
   }
 
-  // Validate user on backend. FormGroup comes from Login Component
+  // Validate user on backend. FormGroup param comes from Login Component
   validateLoginForm(form:FormGroup):void {
     this.loginInfo = form;
 
-    /* To implement: server returns user object to pass along to sessionService
-      for now, just filter user from mock DB
+    /* To implement: server returns user object to pass along to sessionService.
+      For now, just filter user from mock DB
     */
     const user = USERS.filter((u:User) => u.email === this.loginInfo.email)[0];
     this.signIn(user);
@@ -42,7 +42,7 @@ export class AuthenticationService {
 
   signIn(user:User):void {
     // Sign in through session management service
-    this.sessionService.signInSession(user);
+    this.sessionService.login(user);
     // Route to user page
     this.userService.navigateToUserRoute(user.username);
   }

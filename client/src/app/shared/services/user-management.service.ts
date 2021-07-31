@@ -28,7 +28,7 @@ export class UserManagementService {
   }
 
   getCurrentUser():User {
-    return this.sessionService.getSessionInfo();
+    return this.sessionService.getCurrentAccount();
   }
 
   findSingleUserByUsername(username:string) {
@@ -36,17 +36,17 @@ export class UserManagementService {
     return userObj[0];
   }
 
-  searchForUsers(input:string) {
+  getListOfUsersFromSearch(input:string) {
     let usersList = USERS.filter((u:User) => u.username.toLowerCase().includes(input));
     return usersList;
   }
 
-  // From settings page
+  // Method is called from settings page
   setUserAccountDetails(fg:FormGroup) {
     console.log(fg.value);
   }
-
-  // From settings page
+  
+  // Method is called from settings page
   setUserPassword(fg:FormGroup) {
     console.log(fg.value);
   }
@@ -65,19 +65,19 @@ export class UserManagementService {
   isFollowingUser(usernameInput:string):boolean {
     let filterFriendsArray = 
       this.sessionService
-        .getSessionInfo()
+        .getCurrentAccount()
           .listOfFollowing.filter(user => user.username === usernameInput);
           
     /* 
-      If another user is found in the account owner's list of friends
-      findFriendArray.length is larger than 0. Return value below is boolean
+      If another user is found in the account owner's list of friends,
+      findFriendArray.length is greater than 0.
     */
     return filterFriendsArray.length > 0; 
   }
 
-  // Add or remove a post id from the current user's likedPosts array
+  // Add or remove a post from the current user's likedPosts array
   toggleUserLikesPost(flag:boolean, postID:number, user = this.getCurrentUser()) {
-    // If flag is true, user previously liked post and will not unlike it
+    // If true, user previously liked a post and will now unlike it
     if(flag === true) {
       console.log("User no longer likes this post");
     }

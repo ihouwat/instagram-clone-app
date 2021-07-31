@@ -8,10 +8,10 @@ import { Subject } from 'rxjs';
 })
 export class UserSearchService {
 
-  public searchResultsDisp!:boolean; // Flag for opening/closing search box
+  public searchResultsDisplay!:boolean; // Flag for opening/closing search box
 
-  // Observable to determine whether ChatHeaderComponent displays input search or user
-  searchResultsDisplaySubject: Subject<boolean> = new Subject<boolean>(); // Boolean for opening/closing search box\
+  // Subject to determine whether ChatHeaderComponent displays input search or user
+  searchResultsDisplaySubject: Subject<boolean> = new Subject<boolean>(); // Boolean for opening/closing search box
   
   public searchResultsList:Array<User> = []; // List of search results
 
@@ -22,7 +22,7 @@ export class UserSearchService {
 
     // Only refresh input list when 
     if(input.length > 0) {
-      this.searchResultsListSubject.next(this.userService.searchForUsers(input))
+      this.searchResultsListSubject.next(this.userService.getListOfUsersFromSearch(input))
       this.openSearchResults();
     }
     
@@ -50,14 +50,14 @@ export class UserSearchService {
 
   // Get the open/close status of the search results overflow menu
   get searchResultDispStatus():boolean {
-    return this.searchResultsDisp;
+    return this.searchResultsDisplay;
   }
 
   constructor(private userService:UserManagementService) {
     
     // Subscribe to the observable controlling the results display flag
     this.searchResultsDisplaySubject.subscribe((value) =>
-      {next: (this.searchResultsDisp = value)}
+      {next: (this.searchResultsDisplay = value)}
     )
 
     // Subscribe to the observable controlling the results array

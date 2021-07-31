@@ -57,7 +57,7 @@ export class SignUpComponent implements OnInit  {
 }
 
   onSubmit():void {
-    // If we have reached the end of the form
+    // If we have reached the end of the form, sign up user
     if(this.currentStep === 2) {
       this.authService.signUpUser(this.signUpForm.value);
     };

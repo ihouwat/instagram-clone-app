@@ -9,26 +9,31 @@ export class SessionManagementService {
 
   // * This service is to manage sessions, Web Storage API, Redis connection, ??JWT??
 
-  // Stay signed in for dev mode   
+  /* 
+    Flag for determining session status.
+    Stay signed in for dev mode   
+   */
   private isSignedIn:boolean = true;
     
   getSignInStatus():boolean {
     return this.isSignedIn;
   }
 
-  signInSession(user:User) {
+  // Create session when user signs in
+  login(user:User) {
     this.isSignedIn = true;
-    sessionStorage.setItem('accountOwner', JSON.stringify(user));
+    sessionStorage.setItem('currentAccount', JSON.stringify(user));
   }
 
-  signOutSession() {
+  // Destroy session on log out
+  logout() {
     this.isSignedIn = false;
     sessionStorage.clear();
   }
 
-  getSessionInfo():User {
-    const accountOwner = JSON.parse(sessionStorage.getItem('accountOwner') || '{}');
-    return accountOwner;
+  getCurrentAccount():User {
+    const account = JSON.parse(sessionStorage.getItem('currentAccount') || '{}');
+    return account;
   }
 
   constructor() { }
